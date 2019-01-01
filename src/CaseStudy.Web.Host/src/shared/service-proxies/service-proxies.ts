@@ -80,6 +80,139 @@ export class ConfigurationServiceProxy {
 }
 
 @Injectable()
+export class HotelServiceProxy {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ? baseUrl : "";
+    }
+
+    /**
+     * @param file (optional) 
+     * @return Success
+     */
+    uploadCsv(file: FileParameter | null | undefined): Observable<CsvUploadResultDto> {
+        let url_ = this.baseUrl + "/api/Hotel/UploadCsv";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = new FormData();
+        if (file !== null && file !== undefined)
+            content_.append("file", file.data, file.fileName ? file.fileName : "file");
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processUploadCsv(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    debugger;
+                    return this.processUploadCsv(<any>response_);
+                } catch (e) {
+                    return <Observable<CsvUploadResultDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<CsvUploadResultDto>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processUploadCsv(response: HttpResponseBase): Observable<CsvUploadResultDto> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? CsvUploadResultDto.fromJS(resultData200) : new CsvUploadResultDto();
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<CsvUploadResultDto>(<any>null);
+    }
+
+    /**
+     * @param fileId (optional) 
+     * @param sorting (optional) 
+     * @param skipCount (optional) 
+     * @param maxResultCount (optional) 
+     * @return Success
+     */
+    getAll(fileId: string | null | undefined, sorting: string | null | undefined, skipCount: number | null | undefined, maxResultCount: number | null | undefined): Observable<PagedResultDtoOfHotelDto> {
+        let url_ = this.baseUrl + "/api/services/app/Hotel/GetAll?";
+        if (fileId !== undefined)
+            url_ += "FileId=" + encodeURIComponent("" + fileId) + "&"; 
+        if (sorting !== undefined)
+            url_ += "Sorting=" + encodeURIComponent("" + sorting) + "&"; 
+        if (skipCount !== undefined)
+            url_ += "SkipCount=" + encodeURIComponent("" + skipCount) + "&"; 
+        if (maxResultCount !== undefined)
+            url_ += "MaxResultCount=" + encodeURIComponent("" + maxResultCount) + "&"; 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetAll(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetAll(<any>response_);
+                } catch (e) {
+                    return <Observable<PagedResultDtoOfHotelDto>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<PagedResultDtoOfHotelDto>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processGetAll(response: HttpResponseBase): Observable<PagedResultDtoOfHotelDto> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? PagedResultDtoOfHotelDto.fromJS(resultData200) : new PagedResultDtoOfHotelDto();
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<PagedResultDtoOfHotelDto>(<any>null);
+    }
+}
+
+@Injectable()
 export class SessionServiceProxy {
     private http: HttpClient;
     private baseUrl: string;
@@ -143,7 +276,7 @@ export class SessionServiceProxy {
 }
 
 export class ChangeUiThemeInput implements IChangeUiThemeInput {
-    theme: string;
+    theme!: string;
 
     constructor(data?: IChangeUiThemeInput) {
         if (data) {
@@ -185,8 +318,175 @@ export interface IChangeUiThemeInput {
     theme: string;
 }
 
+export class CsvUploadResultDto implements ICsvUploadResultDto {
+    fileName!: string | undefined;
+    name!: string | undefined;
+
+    constructor(data?: ICsvUploadResultDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.fileName = data["fileName"];
+            this.name = data["name"];
+        }
+    }
+
+    static fromJS(data: any): CsvUploadResultDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new CsvUploadResultDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["fileName"] = this.fileName;
+        data["name"] = this.name;
+        return data; 
+    }
+
+    clone(): CsvUploadResultDto {
+        const json = this.toJSON();
+        let result = new CsvUploadResultDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface ICsvUploadResultDto {
+    fileName: string | undefined;
+    name: string | undefined;
+}
+
+export class PagedResultDtoOfHotelDto implements IPagedResultDtoOfHotelDto {
+    totalCount!: number | undefined;
+    items!: HotelDto[] | undefined;
+
+    constructor(data?: IPagedResultDtoOfHotelDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.totalCount = data["totalCount"];
+            if (data["items"] && data["items"].constructor === Array) {
+                this.items = [];
+                for (let item of data["items"])
+                    this.items.push(HotelDto.fromJS(item));
+            }
+        }
+    }
+
+    static fromJS(data: any): PagedResultDtoOfHotelDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new PagedResultDtoOfHotelDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["totalCount"] = this.totalCount;
+        if (this.items && this.items.constructor === Array) {
+            data["items"] = [];
+            for (let item of this.items)
+                data["items"].push(item.toJSON());
+        }
+        return data; 
+    }
+
+    clone(): PagedResultDtoOfHotelDto {
+        const json = this.toJSON();
+        let result = new PagedResultDtoOfHotelDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface IPagedResultDtoOfHotelDto {
+    totalCount: number | undefined;
+    items: HotelDto[] | undefined;
+}
+
+export class HotelDto implements IHotelDto {
+    name!: string | undefined;
+    address!: string | undefined;
+    stars!: number | undefined;
+    contact!: string | undefined;
+    phone!: string | undefined;
+    uri!: string | undefined;
+
+    constructor(data?: IHotelDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.name = data["name"];
+            this.address = data["address"];
+            this.stars = data["stars"];
+            this.contact = data["contact"];
+            this.phone = data["phone"];
+            this.uri = data["uri"];
+        }
+    }
+
+    static fromJS(data: any): HotelDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new HotelDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["name"] = this.name;
+        data["address"] = this.address;
+        data["stars"] = this.stars;
+        data["contact"] = this.contact;
+        data["phone"] = this.phone;
+        data["uri"] = this.uri;
+        return data; 
+    }
+
+    clone(): HotelDto {
+        const json = this.toJSON();
+        let result = new HotelDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface IHotelDto {
+    name: string | undefined;
+    address: string | undefined;
+    stars: number | undefined;
+    contact: string | undefined;
+    phone: string | undefined;
+    uri: string | undefined;
+}
+
 export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInformationsOutput {
-    application: ApplicationInfoDto | undefined;
+    application!: ApplicationInfoDto | undefined;
+    user!: UserLoginInfoDto | undefined;
+    tenant!: TenantLoginInfoDto | undefined;
 
     constructor(data?: IGetCurrentLoginInformationsOutput) {
         if (data) {
@@ -200,6 +500,8 @@ export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInform
     init(data?: any) {
         if (data) {
             this.application = data["application"] ? ApplicationInfoDto.fromJS(data["application"]) : <any>undefined;
+            this.user = data["user"] ? UserLoginInfoDto.fromJS(data["user"]) : <any>undefined;
+            this.tenant = data["tenant"] ? TenantLoginInfoDto.fromJS(data["tenant"]) : <any>undefined;
         }
     }
 
@@ -213,6 +515,8 @@ export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInform
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["application"] = this.application ? this.application.toJSON() : <any>undefined;
+        data["user"] = this.user ? this.user.toJSON() : <any>undefined;
+        data["tenant"] = this.tenant ? this.tenant.toJSON() : <any>undefined;
         return data; 
     }
 
@@ -223,127 +527,17 @@ export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInform
         return result;
     }
 }
-export interface IApplicationInfoDto {
-    version: string | undefined;
-    releaseDate: moment.Moment | undefined;
-    features: { [key: string]: boolean; } | undefined;
-}
 
-export class UserLoginInfoDto implements IUserLoginInfoDto {
-    name: string | undefined;
-    surname: string | undefined;
-    userName: string | undefined;
-    emailAddress: string | undefined;
-    id: number | undefined;
-
-    constructor(data?: IUserLoginInfoDto) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(data?: any) {
-        if (data) {
-            this.name = data["name"];
-            this.surname = data["surname"];
-            this.userName = data["userName"];
-            this.emailAddress = data["emailAddress"];
-            this.id = data["id"];
-        }
-    }
-
-    static fromJS(data: any): UserLoginInfoDto {
-        data = typeof data === 'object' ? data : {};
-        let result = new UserLoginInfoDto();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["name"] = this.name;
-        data["surname"] = this.surname;
-        data["userName"] = this.userName;
-        data["emailAddress"] = this.emailAddress;
-        data["id"] = this.id;
-        return data;
-    }
-
-    clone(): UserLoginInfoDto {
-        const json = this.toJSON();
-        let result = new UserLoginInfoDto();
-        result.init(json);
-        return result;
-    }
-}
-
-export interface IUserLoginInfoDto {
-    name: string | undefined;
-    surname: string | undefined;
-    userName: string | undefined;
-    emailAddress: string | undefined;
-    id: number | undefined;
-}
-export interface ITenantLoginInfoDto {
-    tenancyName: string | undefined;
-    name: string | undefined;
-    id: number | undefined;
-}
-export class TenantLoginInfoDto implements ITenantLoginInfoDto {
-    tenancyName: string | undefined;
-    name: string | undefined;
-    id: number | undefined;
-
-    constructor(data?: ITenantLoginInfoDto) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(data?: any) {
-        if (data) {
-            this.tenancyName = data["tenancyName"];
-            this.name = data["name"];
-            this.id = data["id"];
-        }
-    }
-
-    static fromJS(data: any): TenantLoginInfoDto {
-        data = typeof data === 'object' ? data : {};
-        let result = new TenantLoginInfoDto();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["tenancyName"] = this.tenancyName;
-        data["name"] = this.name;
-        data["id"] = this.id;
-        return data;
-    }
-
-    clone(): TenantLoginInfoDto {
-        const json = this.toJSON();
-        let result = new TenantLoginInfoDto();
-        result.init(json);
-        return result;
-    }
-}
 export interface IGetCurrentLoginInformationsOutput {
     application: ApplicationInfoDto | undefined;
+    user: UserLoginInfoDto | undefined;
+    tenant: TenantLoginInfoDto | undefined;
 }
 
 export class ApplicationInfoDto implements IApplicationInfoDto {
-    version: string | undefined;
-    releaseDate: moment.Moment | undefined;
-    features: { [key: string] : boolean; } | undefined;
+    version!: string | undefined;
+    releaseDate!: moment.Moment | undefined;
+    features!: { [key: string] : boolean; } | undefined;
 
     constructor(data?: IApplicationInfoDto) {
         if (data) {
@@ -401,6 +595,121 @@ export interface IApplicationInfoDto {
     version: string | undefined;
     releaseDate: moment.Moment | undefined;
     features: { [key: string] : boolean; } | undefined;
+}
+
+export class UserLoginInfoDto implements IUserLoginInfoDto {
+    name!: string | undefined;
+    surname!: string | undefined;
+    userName!: string | undefined;
+    emailAddress!: string | undefined;
+    id!: number | undefined;
+
+    constructor(data?: IUserLoginInfoDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.name = data["name"];
+            this.surname = data["surname"];
+            this.userName = data["userName"];
+            this.emailAddress = data["emailAddress"];
+            this.id = data["id"];
+        }
+    }
+
+    static fromJS(data: any): UserLoginInfoDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new UserLoginInfoDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["userName"] = this.userName;
+        data["emailAddress"] = this.emailAddress;
+        data["id"] = this.id;
+        return data; 
+    }
+
+    clone(): UserLoginInfoDto {
+        const json = this.toJSON();
+        let result = new UserLoginInfoDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface IUserLoginInfoDto {
+    name: string | undefined;
+    surname: string | undefined;
+    userName: string | undefined;
+    emailAddress: string | undefined;
+    id: number | undefined;
+}
+
+export class TenantLoginInfoDto implements ITenantLoginInfoDto {
+    tenancyName!: string | undefined;
+    name!: string | undefined;
+    id!: number | undefined;
+
+    constructor(data?: ITenantLoginInfoDto) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.tenancyName = data["tenancyName"];
+            this.name = data["name"];
+            this.id = data["id"];
+        }
+    }
+
+    static fromJS(data: any): TenantLoginInfoDto {
+        data = typeof data === 'object' ? data : {};
+        let result = new TenantLoginInfoDto();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["tenancyName"] = this.tenancyName;
+        data["name"] = this.name;
+        data["id"] = this.id;
+        return data; 
+    }
+
+    clone(): TenantLoginInfoDto {
+        const json = this.toJSON();
+        let result = new TenantLoginInfoDto();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface ITenantLoginInfoDto {
+    tenancyName: string | undefined;
+    name: string | undefined;
+    id: number | undefined;
+}
+
+export interface FileParameter {
+    data: any;
+    fileName: string;
 }
 
 export class SwaggerException extends Error {

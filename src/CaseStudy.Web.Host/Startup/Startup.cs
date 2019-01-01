@@ -16,6 +16,8 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace CaseStudy.Web.Host.Startup
 {
@@ -34,7 +36,7 @@ namespace CaseStudy.Web.Host.Startup
         {
             // MVC
             services.AddMvc(
-            );
+            ).SetCompatibilityVersion(CompatibilityVersion.Version_2_1); ;
 
 
             services.AddSignalR();
@@ -55,8 +57,8 @@ namespace CaseStudy.Web.Host.Startup
             {
                 options.SwaggerDoc("v1", new Info { Title = "CaseStudy API", Version = "v1" });
                 options.DocInclusionPredicate((docName, description) => true);
-               
-              
+              //  options.OperationFilter<FileUploadOperation>();
+
             });
 
             // Configure Abp and Dependency Injection
@@ -74,7 +76,12 @@ namespace CaseStudy.Web.Host.Startup
 
             app.UseCors(_defaultCorsPolicyName);
            
-            app.Use(async (context, next) => { await next(); if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value)) { context.Request.Path = "/index.html"; await next(); } });
+            app.Use(async (context, next) => { await next();
+                if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                {
+                    context.Request.Path = "/index.html"; await next(); 
+
+                } });
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
@@ -96,7 +103,28 @@ namespace CaseStudy.Web.Host.Startup
                 options.SwaggerEndpoint(_appConfiguration["App:ServerRootAddress"].EnsureEndsWith('/') + "swagger/v1/swagger.json", "CaseStudy API V1");
                 options.IndexStream = () => Assembly.GetExecutingAssembly()
                     .GetManifestResourceStream("CaseStudy.Web.Host.wwwroot.swagger.ui.index.html");
+                
             }); // URL: /swagger
+        }
+    }
+
+    public class FileUploadOperation : IOperationFilter
+    {
+        public void Apply(Operation operation, OperationFilterContext context)
+        {
+            if (operation.OperationId.ToLower() == "apihoteluploadcsvpost")
+            {
+                operation.Parameters.Clear();
+                operation.Parameters.Add(new NonBodyParameter
+                {
+                    Name = "file",
+                    In = "formData",
+                    Description = "Upload File",
+                    Required = true,
+                    Type = "file"
+                });
+                operation.Consumes.Add("multipart/form-data");
+            }
         }
     }
 }

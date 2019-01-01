@@ -20,6 +20,15 @@ namespace CaseStudy.Sessions
                 }
             };
 
+         
+                output.User = new UserLoginInfoDto()
+                {
+                    Name = "Halit",
+                    EmailAddress = "halitmuslu@gmail.com",
+                    Id = 1,
+                    Surname = "Muslu",
+                    UserName="halitmuslu"
+                };
             return output;
         }
     }

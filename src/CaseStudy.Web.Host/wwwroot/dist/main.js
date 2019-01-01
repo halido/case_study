@@ -347,10 +347,7 @@ var AppPreBootstrap = /** @class */ (function () {
     AppPreBootstrap.getApplicationConfig = function (appRootUrl, callback) {
         return abp.ajax({
             url: appRootUrl + 'assets/' + _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].appConfig,
-            method: 'GET',
-            headers: {
-                'Abp.TenantId': abp.multiTenancy.getTenantIdCookie()
-            }
+            method: 'GET'
         }).done(function (result) {
             _shared_AppConsts__WEBPACK_IMPORTED_MODULE_1__["AppConsts"].appBaseUrl = result.appBaseUrl;
             _shared_AppConsts__WEBPACK_IMPORTED_MODULE_1__["AppConsts"].remoteServiceBaseUrl = result.remoteServiceBaseUrl;
@@ -371,16 +368,11 @@ var AppPreBootstrap = /** @class */ (function () {
         var _this = this;
         return abp.ajax({
             url: _shared_AppConsts__WEBPACK_IMPORTED_MODULE_1__["AppConsts"].remoteServiceBaseUrl + '/AbpUserConfiguration/GetAll',
-            method: 'GET',
-            headers: {
-                Authorization: 'Bearer ' + abp.auth.getToken(),
-                '.AspNetCore.Culture': abp.utils.getCookieValue("Abp.Localization.CultureName"),
-                'Abp.TenantId': abp.multiTenancy.getTenantIdCookie()
-            }
+            method: 'GET'
         }).done(function (result) {
             $.extend(true, abp, result);
             abp.clock.provider = _this.getCurrentClockProvider(result.clock.provider);
-            moment__WEBPACK_IMPORTED_MODULE_0__["locale"](abp.localization.currentLanguage.name);
+            moment__WEBPACK_IMPORTED_MODULE_0__["locale"]("tr");
             if (abp.clock.provider.supportsMultipleTimezone) {
                 moment__WEBPACK_IMPORTED_MODULE_0__["tz"].setDefault(abp.timing.timeZoneInfo.iana.timeZoneId);
             }
@@ -640,6 +632,7 @@ function appInitializerFactory(injector, platformLocation) {
             _AppPreBootstrap__WEBPACK_IMPORTED_MODULE_13__["AppPreBootstrap"].run(appBaseUrl, function () {
                 abp.event.trigger('abp.dynamicScriptsInitialized');
                 abp.ui.clearBusy();
+                resolve();
             });
         });
     };
@@ -767,6 +760,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _abp_settings_setting_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @abp/settings/setting.service */ "./node_modules/abp-ng2-module/dist/src/settings/setting.service.js");
 /* harmony import */ var _abp_message_message_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @abp/message/message.service */ "./node_modules/abp-ng2-module/dist/src/message/message.service.js");
 /* harmony import */ var _abp_multi_tenancy_abp_multi_tenancy_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @abp/multi-tenancy/abp-multi-tenancy.service */ "./node_modules/abp-ng2-module/dist/src/multi-tenancy/abp-multi-tenancy.service.js");
+/* harmony import */ var _shared_session_app_session_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/session/app-session.service */ "./src/shared/session/app-session.service.ts");
+
 
 
 
@@ -786,6 +781,7 @@ var AppComponentBase = /** @class */ (function () {
         this.setting = injector.get(_abp_settings_setting_service__WEBPACK_IMPORTED_MODULE_6__["SettingService"]);
         this.message = injector.get(_abp_message_message_service__WEBPACK_IMPORTED_MODULE_7__["MessageService"]);
         this.multiTenancy = injector.get(_abp_multi_tenancy_abp_multi_tenancy_service__WEBPACK_IMPORTED_MODULE_8__["AbpMultiTenancyService"]);
+        this.appSession = injector.get(_shared_session_app_session_service__WEBPACK_IMPORTED_MODULE_9__["AppSessionService"]);
         this.elementRef = injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"]);
     }
     AppComponentBase.prototype.l = function (key) {
@@ -802,9 +798,6 @@ var AppComponentBase = /** @class */ (function () {
         }
         args.unshift(localizedText);
         return abp.utils.formatString.apply(this, args);
-    };
-    AppComponentBase.prototype.isGranted = function (permissionName) {
-        return this.permission.isGranted(permissionName);
     };
     return AppComponentBase;
 }());
@@ -1152,15 +1145,16 @@ var LocalizePipe = /** @class */ (function (_super) {
 /*!*******************************************************!*\
   !*** ./src/shared/service-proxies/service-proxies.ts ***!
   \*******************************************************/
-/*! exports provided: API_BASE_URL, ConfigurationServiceProxy, SessionServiceProxy, ChangeUiThemeInput, GetCurrentLoginInformationsOutput, ApplicationInfoDto, SwaggerException */
+/*! exports provided: API_BASE_URL, HotelServiceProxy, SessionServiceProxy, PagedResultDtoOfHotelDto, HotelDto, GetCurrentLoginInformationsOutput, ApplicationInfoDto, SwaggerException */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API_BASE_URL", function() { return API_BASE_URL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfigurationServiceProxy", function() { return ConfigurationServiceProxy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HotelServiceProxy", function() { return HotelServiceProxy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SessionServiceProxy", function() { return SessionServiceProxy; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeUiThemeInput", function() { return ChangeUiThemeInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PagedResultDtoOfHotelDto", function() { return PagedResultDtoOfHotelDto; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HotelDto", function() { return HotelDto; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetCurrentLoginInformationsOutput", function() { return GetCurrentLoginInformationsOutput; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApplicationInfoDto", function() { return ApplicationInfoDto; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SwaggerException", function() { return SwaggerException; });
@@ -1208,35 +1202,37 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 var API_BASE_URL = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["InjectionToken"]('API_BASE_URL');
-var ConfigurationServiceProxy = /** @class */ (function () {
-    function ConfigurationServiceProxy(http, baseUrl) {
+var HotelServiceProxy = /** @class */ (function () {
+    function HotelServiceProxy(http, baseUrl) {
         this.jsonParseReviver = undefined;
         this.http = http;
         this.baseUrl = baseUrl ? baseUrl : "";
     }
     /**
-     * @param input (optional)
+     * @param file Upload File
      * @return Success
      */
-    ConfigurationServiceProxy.prototype.changeUiTheme = function (input) {
+    HotelServiceProxy.prototype.uploadCsv = function (file) {
         var _this = this;
-        var url_ = this.baseUrl + "/api/services/app/Configuration/ChangeUiTheme";
+        var url_ = this.baseUrl + "/api/Hotel/UploadCsv";
         url_ = url_.replace(/[?&]$/, "");
-        var content_ = JSON.stringify(input);
+        var content_ = new FormData();
+        if (file === null || file === undefined)
+            throw new Error("The parameter 'file' cannot be null.");
+        else
+            content_.append("file", file.data, file.fileName ? file.fileName : "file");
         var options_ = {
             body: content_,
             observe: "response",
             responseType: "blob",
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
-                "Content-Type": "application/json",
-            })
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({})
         };
         return this.http.request("post", url_, options_).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["mergeMap"])(function (response_) {
-            return _this.processChangeUiTheme(response_);
+            return _this.processUploadCsv(response_);
         })).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["catchError"])(function (response_) {
             if (response_ instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpResponseBase"]) {
                 try {
-                    return _this.processChangeUiTheme(response_);
+                    return _this.processUploadCsv(response_);
                 }
                 catch (e) {
                     return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(e);
@@ -1246,7 +1242,7 @@ var ConfigurationServiceProxy = /** @class */ (function () {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(response_);
         }));
     };
-    ConfigurationServiceProxy.prototype.processChangeUiTheme = function (response) {
+    HotelServiceProxy.prototype.processUploadCsv = function (response) {
         var status = response.status;
         var responseBlob = response instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpResponse"] ? response.body :
             response.error instanceof Blob ? response.error : undefined;
@@ -1270,12 +1266,81 @@ var ConfigurationServiceProxy = /** @class */ (function () {
         }
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(null);
     };
-    ConfigurationServiceProxy = __decorate([
+    /**
+     * @param fileId (optional)
+     * @param sorting (optional)
+     * @param skipCount (optional)
+     * @param maxResultCount (optional)
+     * @return Success
+     */
+    HotelServiceProxy.prototype.getAll = function (fileId, sorting, skipCount, maxResultCount) {
+        var _this = this;
+        var url_ = this.baseUrl + "/api/services/app/Hotel/GetAll?";
+        if (fileId !== undefined)
+            url_ += "FileId=" + encodeURIComponent("" + fileId) + "&";
+        if (sorting !== undefined)
+            url_ += "Sorting=" + encodeURIComponent("" + sorting) + "&";
+        if (skipCount !== undefined)
+            url_ += "SkipCount=" + encodeURIComponent("" + skipCount) + "&";
+        if (maxResultCount !== undefined)
+            url_ += "MaxResultCount=" + encodeURIComponent("" + maxResultCount) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+        var options_ = {
+            observe: "response",
+            responseType: "blob",
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+                "Accept": "application/json"
+            })
+        };
+        return this.http.request("get", url_, options_).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["mergeMap"])(function (response_) {
+            return _this.processGetAll(response_);
+        })).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["catchError"])(function (response_) {
+            if (response_ instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpResponseBase"]) {
+                try {
+                    return _this.processGetAll(response_);
+                }
+                catch (e) {
+                    return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(e);
+                }
+            }
+            else
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])(response_);
+        }));
+    };
+    HotelServiceProxy.prototype.processGetAll = function (response) {
+        var _this = this;
+        var status = response.status;
+        var responseBlob = response instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpResponse"] ? response.body :
+            response.error instanceof Blob ? response.error : undefined;
+        var _headers = {};
+        if (response.headers) {
+            for (var _i = 0, _a = response.headers.keys(); _i < _a.length; _i++) {
+                var key = _a[_i];
+                _headers[key] = response.headers.get(key);
+            }
+        }
+        ;
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["mergeMap"])(function (_responseText) {
+                var result200 = null;
+                var resultData200 = _responseText === "" ? null : JSON.parse(_responseText, _this.jsonParseReviver);
+                result200 = resultData200 ? PagedResultDtoOfHotelDto.fromJS(resultData200) : new PagedResultDtoOfHotelDto();
+                return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(result200);
+            }));
+        }
+        else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_0__["mergeMap"])(function (_responseText) {
+                return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(null);
+    };
+    HotelServiceProxy = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
         __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"])(_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])), __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"])()), __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"])(API_BASE_URL)),
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], String])
-    ], ConfigurationServiceProxy);
-    return ConfigurationServiceProxy;
+    ], HotelServiceProxy);
+    return HotelServiceProxy;
 }());
 
 var SessionServiceProxy = /** @class */ (function () {
@@ -1349,8 +1414,8 @@ var SessionServiceProxy = /** @class */ (function () {
     return SessionServiceProxy;
 }());
 
-var ChangeUiThemeInput = /** @class */ (function () {
-    function ChangeUiThemeInput(data) {
+var PagedResultDtoOfHotelDto = /** @class */ (function () {
+    function PagedResultDtoOfHotelDto(data) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -1358,29 +1423,87 @@ var ChangeUiThemeInput = /** @class */ (function () {
             }
         }
     }
-    ChangeUiThemeInput.prototype.init = function (data) {
+    PagedResultDtoOfHotelDto.prototype.init = function (data) {
         if (data) {
-            this.theme = data["theme"];
+            this.totalCount = data["totalCount"];
+            if (data["items"] && data["items"].constructor === Array) {
+                this.items = [];
+                for (var _i = 0, _a = data["items"]; _i < _a.length; _i++) {
+                    var item = _a[_i];
+                    this.items.push(HotelDto.fromJS(item));
+                }
+            }
         }
     };
-    ChangeUiThemeInput.fromJS = function (data) {
+    PagedResultDtoOfHotelDto.fromJS = function (data) {
         data = typeof data === 'object' ? data : {};
-        var result = new ChangeUiThemeInput();
+        var result = new PagedResultDtoOfHotelDto();
         result.init(data);
         return result;
     };
-    ChangeUiThemeInput.prototype.toJSON = function (data) {
+    PagedResultDtoOfHotelDto.prototype.toJSON = function (data) {
         data = typeof data === 'object' ? data : {};
-        data["theme"] = this.theme;
+        data["totalCount"] = this.totalCount;
+        if (this.items && this.items.constructor === Array) {
+            data["items"] = [];
+            for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
+                var item = _a[_i];
+                data["items"].push(item.toJSON());
+            }
+        }
         return data;
     };
-    ChangeUiThemeInput.prototype.clone = function () {
+    PagedResultDtoOfHotelDto.prototype.clone = function () {
         var json = this.toJSON();
-        var result = new ChangeUiThemeInput();
+        var result = new PagedResultDtoOfHotelDto();
         result.init(json);
         return result;
     };
-    return ChangeUiThemeInput;
+    return PagedResultDtoOfHotelDto;
+}());
+
+var HotelDto = /** @class */ (function () {
+    function HotelDto(data) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    this[property] = data[property];
+            }
+        }
+    }
+    HotelDto.prototype.init = function (data) {
+        if (data) {
+            this.name = data["name"];
+            this.address = data["address"];
+            this.stars = data["stars"];
+            this.contact = data["contact"];
+            this.phone = data["phone"];
+            this.uri = data["uri"];
+        }
+    };
+    HotelDto.fromJS = function (data) {
+        data = typeof data === 'object' ? data : {};
+        var result = new HotelDto();
+        result.init(data);
+        return result;
+    };
+    HotelDto.prototype.toJSON = function (data) {
+        data = typeof data === 'object' ? data : {};
+        data["name"] = this.name;
+        data["address"] = this.address;
+        data["stars"] = this.stars;
+        data["contact"] = this.contact;
+        data["phone"] = this.phone;
+        data["uri"] = this.uri;
+        return data;
+    };
+    HotelDto.prototype.clone = function () {
+        var json = this.toJSON();
+        var result = new HotelDto();
+        result.init(json);
+        return result;
+    };
+    return HotelDto;
 }());
 
 var GetCurrentLoginInformationsOutput = /** @class */ (function () {
@@ -1542,12 +1665,207 @@ var ServiceProxyModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             providers: [
                 _service_proxies__WEBPACK_IMPORTED_MODULE_3__["SessionServiceProxy"],
-                _service_proxies__WEBPACK_IMPORTED_MODULE_3__["ConfigurationServiceProxy"],
                 { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HTTP_INTERCEPTORS"], useClass: _abp_abpHttpInterceptor__WEBPACK_IMPORTED_MODULE_2__["AbpHttpInterceptor"], multi: true }
             ]
         })
     ], ServiceProxyModule);
     return ServiceProxyModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/shared/session/app-session.service.ts":
+/*!***************************************************!*\
+  !*** ./src/shared/session/app-session.service.ts ***!
+  \***************************************************/
+/*! exports provided: TenantLoginInfoDto, UserLoginInfoDto, AppSessionService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TenantLoginInfoDto", function() { return TenantLoginInfoDto; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserLoginInfoDto", function() { return UserLoginInfoDto; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppSessionService", function() { return AppSessionService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_service_proxies_service_proxies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/service-proxies/service-proxies */ "./src/shared/service-proxies/service-proxies.ts");
+/* harmony import */ var _abp_multi_tenancy_abp_multi_tenancy_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @abp/multi-tenancy/abp-multi-tenancy.service */ "./node_modules/abp-ng2-module/dist/src/multi-tenancy/abp-multi-tenancy.service.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TenantLoginInfoDto = /** @class */ (function () {
+    function TenantLoginInfoDto(data) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    this[property] = data[property];
+            }
+        }
+    }
+    TenantLoginInfoDto.prototype.init = function (data) {
+        if (data) {
+            this.tenancyName = data["tenancyName"];
+            this.name = data["name"];
+            this.id = data["id"];
+        }
+    };
+    TenantLoginInfoDto.fromJS = function (data) {
+        data = typeof data === 'object' ? data : {};
+        var result = new TenantLoginInfoDto();
+        result.init(data);
+        return result;
+    };
+    TenantLoginInfoDto.prototype.toJSON = function (data) {
+        data = typeof data === 'object' ? data : {};
+        data["tenancyName"] = this.tenancyName;
+        data["name"] = this.name;
+        data["id"] = this.id;
+        return data;
+    };
+    TenantLoginInfoDto.prototype.clone = function () {
+        var json = this.toJSON();
+        var result = new TenantLoginInfoDto();
+        result.init(json);
+        return result;
+    };
+    return TenantLoginInfoDto;
+}());
+
+var UserLoginInfoDto = /** @class */ (function () {
+    function UserLoginInfoDto(data) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    this[property] = data[property];
+            }
+        }
+    }
+    UserLoginInfoDto.prototype.init = function (data) {
+        if (data) {
+            this.name = data["name"];
+            this.surname = data["surname"];
+            this.userName = data["userName"];
+            this.emailAddress = data["emailAddress"];
+            this.id = data["id"];
+        }
+    };
+    UserLoginInfoDto.fromJS = function (data) {
+        data = typeof data === 'object' ? data : {};
+        var result = new UserLoginInfoDto();
+        result.init(data);
+        return result;
+    };
+    UserLoginInfoDto.prototype.toJSON = function (data) {
+        data = typeof data === 'object' ? data : {};
+        data["name"] = this.name;
+        data["surname"] = this.surname;
+        data["userName"] = this.userName;
+        data["emailAddress"] = this.emailAddress;
+        data["id"] = this.id;
+        return data;
+    };
+    UserLoginInfoDto.prototype.clone = function () {
+        var json = this.toJSON();
+        var result = new UserLoginInfoDto();
+        result.init(json);
+        return result;
+    };
+    return UserLoginInfoDto;
+}());
+
+var AppSessionService = /** @class */ (function () {
+    function AppSessionService(_sessionService, _abpMultiTenancyService) {
+        this._sessionService = _sessionService;
+        this._abpMultiTenancyService = _abpMultiTenancyService;
+    }
+    Object.defineProperty(AppSessionService.prototype, "application", {
+        get: function () {
+            return this._application;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AppSessionService.prototype, "user", {
+        get: function () {
+            return this._user;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AppSessionService.prototype, "userId", {
+        get: function () {
+            return this.user ? this.user.id : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AppSessionService.prototype, "tenant", {
+        get: function () {
+            return this._tenant;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AppSessionService.prototype, "tenantId", {
+        get: function () {
+            return this.tenant ? this.tenant.id : null;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    AppSessionService.prototype.getShownLoginName = function () {
+        return "Halit Muslu";
+    };
+    AppSessionService.prototype.init = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._sessionService.getCurrentLoginInformations().toPromise().then(function (result) {
+                _this._application = result.application;
+                _this._user = new UserLoginInfoDto();
+                _this._user.name = "Halit";
+                _this._user.surname = "Muslu";
+                _this._user.emailAddress = "";
+                _this._tenant = new TenantLoginInfoDto();
+                _this._tenant.name = "";
+                resolve(true);
+            }, function (err) {
+                reject(err);
+            });
+        });
+    };
+    AppSessionService.prototype.changeTenantIfNeeded = function (tenantId) {
+        if (this.isCurrentTenant(tenantId)) {
+            return false;
+        }
+        abp.multiTenancy.setTenantIdCookie(tenantId);
+        location.reload();
+        return true;
+    };
+    AppSessionService.prototype.isCurrentTenant = function (tenantId) {
+        if (!tenantId && this.tenant) {
+            return false;
+        }
+        else if (tenantId && (!this.tenant || this.tenant.id !== tenantId)) {
+            return false;
+        }
+        return true;
+    };
+    AppSessionService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_shared_service_proxies_service_proxies__WEBPACK_IMPORTED_MODULE_1__["SessionServiceProxy"],
+            _abp_multi_tenancy_abp_multi_tenancy_service__WEBPACK_IMPORTED_MODULE_2__["AbpMultiTenancyService"]])
+    ], AppSessionService);
+    return AppSessionService;
 }());
 
 
@@ -1574,12 +1892,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var shared_directives_material_input_directive__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! shared/directives/material-input.directive */ "./src/shared/directives/material-input.directive.ts");
 /* harmony import */ var _pagination_abp_pagination_controls_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pagination/abp-pagination-controls.component */ "./src/shared/pagination/abp-pagination-controls.component.ts");
 /* harmony import */ var _shared_pipes_localize_pipe__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @shared/pipes/localize.pipe */ "./src/shared/pipes/localize.pipe.ts");
+/* harmony import */ var _session_app_session_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./session/app-session.service */ "./src/shared/session/app-session.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1598,6 +1918,7 @@ var SharedModule = /** @class */ (function () {
         return {
             ngModule: SharedModule_1,
             providers: [
+                _session_app_session_service__WEBPACK_IMPORTED_MODULE_10__["AppSessionService"],
                 _nav_app_url_service__WEBPACK_IMPORTED_MODULE_5__["AppUrlService"],
                 _auth_app_auth_service__WEBPACK_IMPORTED_MODULE_6__["AppAuthService"]
             ]

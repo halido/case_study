@@ -2260,7 +2260,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [@routerTransition]>\n\n    <div class=\"block-header\">\n        <h2>SAMPLE DASHBOARD</h2>\n    </div>\n\n    <!-- Widgets -->\n    <div class=\"row clearfix\">\n        <div class=\"col-lg-3 col-md-3 col-sm-6 col-xs-12\">\n            <div class=\"info-box bg-pink hover-expand-effect\">\n                <div class=\"icon\">\n                    <i class=\"material-icons\">playlist_add_check</i>\n                </div>\n                <div class=\"content\">\n                    <div class=\"text\">NEW TASKS</div>\n                    <div class=\"number count-to\" data-from=\"0\" data-to=\"125\" data-speed=\"1000\" data-fresh-interval=\"20\"></div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3 col-md-3 col-sm-6 col-xs-12\">\n            <div class=\"info-box bg-cyan hover-expand-effect\">\n                <div class=\"icon\">\n                    <i class=\"material-icons\">help</i>\n                </div>\n                <div class=\"content\">\n                    <div class=\"text\">NEW TICKETS</div>\n                    <div class=\"number count-to\" data-from=\"0\" data-to=\"257\" data-speed=\"1000\" data-fresh-interval=\"20\"></div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3 col-md-3 col-sm-6 col-xs-12\">\n            <div class=\"info-box bg-light-green hover-expand-effect\">\n                <div class=\"icon\">\n                    <i class=\"material-icons\">forum</i>\n                </div>\n                <div class=\"content\">\n                    <div class=\"text\">NEW COMMENTS</div>\n                    <div class=\"number count-to\" data-from=\"0\" data-to=\"243\" data-speed=\"1000\" data-fresh-interval=\"20\"></div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3 col-md-3 col-sm-6 col-xs-12\">\n            <div class=\"info-box bg-orange hover-expand-effect\">\n                <div class=\"icon\">\n                    <i class=\"material-icons\">person_add</i>\n                </div>\n                <div class=\"content\">\n                    <div class=\"text\">NEW VISITORS</div>\n                    <div class=\"number count-to\" data-from=\"0\" data-to=\"1225\" data-speed=\"1000\" data-fresh-interval=\"20\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- #END# Widgets -->\n    <!-- CPU Usage -->\n    <div class=\"row clearfix\">\n        <div class=\"col-xs-12 col-sm-12 col-md-12 col-lg-12\">\n            <div class=\"card\">\n                <div class=\"header\">\n                    <div class=\"row clearfix\">\n                        <div class=\"col-xs-12 col-sm-6\">\n                            <h2>CPU USAGE (%)</h2>\n                        </div>\n                        <div class=\"col-xs-12 col-sm-6 align-right\">\n                            <div class=\"switch panel-switch-btn\">\n                                <span class=\"m-r-10 font-12\">REAL TIME</span>\n                                <label>OFF<input type=\"checkbox\" id=\"realtime\" checked><span class=\"lever switch-col-cyan\"></span>ON</label>\n                            </div>\n                        </div>\n                    </div>\n                    <ul class=\"header-dropdown m-r--5\">\n                        <li class=\"dropdown\">\n                            <a href=\"javascript:void(0);\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <i class=\"material-icons\">more_vert</i>\n                            </a>\n                            <ul class=\"dropdown-menu pull-right\">\n                                <li><a href=\"javascript:void(0);\">Action</a></li>\n                                <li><a href=\"javascript:void(0);\">Another action</a></li>\n                                <li><a href=\"javascript:void(0);\">Something else here</a></li>\n                            </ul>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"body\">\n                    <div id=\"real_time_chart\" class=\"dashboard-flot-chart\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- #END# CPU Usage -->\n    <div class=\"row clearfix\">\n        <!-- Visitors -->\n        <div class=\"col-xs-12 col-sm-12 col-md-4 col-lg-4\">\n            <div class=\"card\">\n                <div class=\"body bg-pink\">\n                    <div class=\"sparkline\" data-type=\"line\" data-spot-Radius=\"4\" data-highlight-Spot-Color=\"rgb(233, 30, 99)\" data-highlight-Line-Color=\"#fff\"\n                         data-min-Spot-Color=\"rgb(255,255,255)\" data-max-Spot-Color=\"rgb(255,255,255)\" data-spot-Color=\"rgb(255,255,255)\"\n                         data-offset=\"90\" data-width=\"100%\" data-height=\"92px\" data-line-Width=\"2\" data-line-Color=\"rgba(255,255,255,0.7)\"\n                         data-fill-Color=\"rgba(0, 188, 212, 0)\">\n                        12,10,9,6,5,6,10,5,7,5,12,13,7,12,11\n                    </div>\n                    <ul class=\"dashboard-stat-list\">\n                        <li>\n                            TODAY\n                            <span class=\"pull-right\"><b>1 200</b> <small>USERS</small></span>\n                        </li>\n                        <li>\n                            YESTERDAY\n                            <span class=\"pull-right\"><b>3 872</b> <small>USERS</small></span>\n                        </li>\n                        <li>\n                            LAST WEEK\n                            <span class=\"pull-right\"><b>26 582</b> <small>USERS</small></span>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        <!-- #END# Visitors -->\n        <!-- Latest Social Trends -->\n        <div class=\"col-xs-12 col-sm-12 col-md-4 col-lg-4\">\n            <div class=\"card\">\n                <div class=\"body bg-cyan\">\n                    <div class=\"m-b--35 font-bold\">LATEST SOCIAL TRENDS</div>\n                    <ul class=\"dashboard-stat-list\">\n                        <li>\n                            #socialtrends\n                            <span class=\"pull-right\">\n                                <i class=\"material-icons\">trending_up</i>\n                            </span>\n                        </li>\n                        <li>\n                            #materialdesign\n                            <span class=\"pull-right\">\n                                <i class=\"material-icons\">trending_up</i>\n                            </span>\n                        </li>\n                        <li>#adminbsb</li>\n                        <li>#freeadmintemplate</li>\n                        <li>#bootstraptemplate</li>\n                        <li>\n                            #freehtmltemplate\n                            <span class=\"pull-right\">\n                                <i class=\"material-icons\">trending_up</i>\n                            </span>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        <!-- #END# Latest Social Trends -->\n        <!-- Answered Tickets -->\n        <div class=\"col-xs-12 col-sm-12 col-md-4 col-lg-4\">\n            <div class=\"card\">\n                <div class=\"body bg-teal\">\n                    <div class=\"font-bold m-b--35\">ANSWERED TICKETS</div>\n                    <ul class=\"dashboard-stat-list\">\n                        <li>\n                            TODAY\n                            <span class=\"pull-right\"><b>12</b> <small>TICKETS</small></span>\n                        </li>\n                        <li>\n                            YESTERDAY\n                            <span class=\"pull-right\"><b>15</b> <small>TICKETS</small></span>\n                        </li>\n                        <li>\n                            LAST WEEK\n                            <span class=\"pull-right\"><b>90</b> <small>TICKETS</small></span>\n                        </li>\n                        <li>\n                            LAST MONTH\n                            <span class=\"pull-right\"><b>342</b> <small>TICKETS</small></span>\n                        </li>\n                        <li>\n                            LAST YEAR\n                            <span class=\"pull-right\"><b>4 225</b> <small>TICKETS</small></span>\n                        </li>\n                        <li>\n                            ALL\n                            <span class=\"pull-right\"><b>8 752</b> <small>TICKETS</small></span>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n        <!-- #END# Answered Tickets -->\n    </div>\n    <div class=\"row clearfix\">\n        <!-- Task Info -->\n        <div class=\"col-xs-12 col-sm-12 col-md-8 col-lg-8\">\n            <div class=\"card\">\n                <div class=\"header\">\n                    <h2>TASK INFOS</h2>\n                    <ul class=\"header-dropdown m-r--5\">\n                        <li class=\"dropdown\">\n                            <a href=\"javascript:void(0);\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <i class=\"material-icons\">more_vert</i>\n                            </a>\n                            <ul class=\"dropdown-menu pull-right\">\n                                <li><a href=\"javascript:void(0);\">Action</a></li>\n                                <li><a href=\"javascript:void(0);\">Another action</a></li>\n                                <li><a href=\"javascript:void(0);\">Something else here</a></li>\n                            </ul>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"body\">\n                    <div class=\"table-responsive\">\n                        <table class=\"table table-hover dashboard-task-infos\">\n                            <thead>\n                                <tr>\n                                    <th>#</th>\n                                    <th>Task</th>\n                                    <th>Status</th>\n                                    <th>Manager</th>\n                                    <th>Progress</th>\n                                </tr>\n                            </thead>\n                            <tbody>\n                                <tr>\n                                    <td>1</td>\n                                    <td>Task A</td>\n                                    <td><span class=\"label bg-green\">Doing</span></td>\n                                    <td>John Doe</td>\n                                    <td>\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar bg-green\" role=\"progressbar\" aria-valuenow=\"62\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 62%\"></div>\n                                        </div>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>2</td>\n                                    <td>Task B</td>\n                                    <td><span class=\"label bg-blue\">To Do</span></td>\n                                    <td>John Doe</td>\n                                    <td>\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar bg-blue\" role=\"progressbar\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 40%\"></div>\n                                        </div>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>3</td>\n                                    <td>Task C</td>\n                                    <td><span class=\"label bg-light-blue\">On Hold</span></td>\n                                    <td>John Doe</td>\n                                    <td>\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar bg-light-blue\" role=\"progressbar\" aria-valuenow=\"72\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 72%\"></div>\n                                        </div>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>4</td>\n                                    <td>Task D</td>\n                                    <td><span class=\"label bg-orange\">Wait Approvel</span></td>\n                                    <td>John Doe</td>\n                                    <td>\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar bg-orange\" role=\"progressbar\" aria-valuenow=\"95\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 95%\"></div>\n                                        </div>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>5</td>\n                                    <td>Task E</td>\n                                    <td>\n                                        <span class=\"label bg-red\">Suspended</span>\n                                    </td>\n                                    <td>John Doe</td>\n                                    <td>\n                                        <div class=\"progress\">\n                                            <div class=\"progress-bar bg-red\" role=\"progressbar\" aria-valuenow=\"87\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 87%\"></div>\n                                        </div>\n                                    </td>\n                                </tr>\n                            </tbody>\n                        </table>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <!-- #END# Task Info -->\n        <!-- Browser Usage -->\n        <div class=\"col-xs-12 col-sm-12 col-md-4 col-lg-4\">\n            <div class=\"card\">\n                <div class=\"header\">\n                    <h2>BROWSER USAGE</h2>\n                    <ul class=\"header-dropdown m-r--5\">\n                        <li class=\"dropdown\">\n                            <a href=\"javascript:void(0);\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                <i class=\"material-icons\">more_vert</i>\n                            </a>\n                            <ul class=\"dropdown-menu pull-right\">\n                                <li><a href=\"javascript:void(0);\">Action</a></li>\n                                <li><a href=\"javascript:void(0);\">Another action</a></li>\n                                <li><a href=\"javascript:void(0);\">Something else here</a></li>\n                            </ul>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"body\">\n                    <div id=\"donut_chart\" class=\"dashboard-donut-chart\"></div>\n                </div>\n            </div>\n        </div>\n        <!-- #END# Browser Usage -->\n    </div>\n\n</div>"
+module.exports = "<div [@routerTransition]>\n\n    <div class=\"block-header\">\n        <h2>SAMPLE DASHBOARD</h2>\n    </div>\n\n \n   \n    <div class=\"row clearfix\">\n        <p-fileUpload mode=\"basic\" name=\"demo[]\" url=\"./upload.php\" accept=\".csv\" maxFileSize=\"10000000\" (onUpload)=\"onBasicUpload($event)\"></p-fileUpload>\n       \n    </div>\n\n</div>"
 
 /***/ }),
 
@@ -2305,117 +2305,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var HomeComponent = /** @class */ (function (_super) {
     __extends(HomeComponent, _super);
     function HomeComponent(injector) {
-        return _super.call(this, injector) || this;
+        var _this = _super.call(this, injector) || this;
+        _this.uploadedFiles = [];
+        return _this;
     }
+    HomeComponent.prototype.onUpload = function (event) {
+        for (var _i = 0, _a = event.files; _i < _a.length; _i++) {
+            var file = _a[_i];
+            this.uploadedFiles.push(file);
+        }
+        //this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: '' });
+    };
+    HomeComponent.prototype.ngOnInit = function () {
+    };
     HomeComponent.prototype.ngAfterViewInit = function () {
-        $(function () {
-            //Widgets count
-            $('.count-to').countTo();
-            //Sales count to
-            $('.sales-count-to').countTo({
-                formatter: function (value, options) {
-                    return '$' + value.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, ' ').replace('.', ',');
-                }
-            });
-            initRealTimeChart();
-            initDonutChart();
-            initSparkline();
-        });
-        var realtime = 'on';
-        function initRealTimeChart() {
-            //Real time ==========================================================================================
-            var plot = $.plot('#real_time_chart', [getRandomData()], {
-                series: {
-                    shadowSize: 0,
-                    color: 'rgb(0, 188, 212)'
-                },
-                grid: {
-                    borderColor: '#f3f3f3',
-                    borderWidth: 1,
-                    tickColor: '#f3f3f3'
-                },
-                lines: {
-                    fill: true
-                },
-                yaxis: {
-                    min: 0,
-                    max: 100
-                },
-                xaxis: {
-                    min: 0,
-                    max: 100
-                }
-            });
-            function updateRealTime() {
-                plot.setData([getRandomData()]);
-                plot.draw();
-                var timeout;
-                if (realtime === 'on') {
-                    timeout = setTimeout(updateRealTime, 320);
-                }
-                else {
-                    clearTimeout(timeout);
-                }
-            }
-            updateRealTime();
-            $('#realtime').on('change', function () {
-                realtime = this.checked ? 'on' : 'off';
-                updateRealTime();
-            });
-            //====================================================================================================
-        }
-        function initSparkline() {
-            $(".sparkline").each(function () {
-                var $this = $(this);
-                $this.sparkline('html', $this.data());
-            });
-        }
-        function initDonutChart() {
-            (window.Morris).Donut({
-                element: 'donut_chart',
-                data: [{
-                        label: 'Chrome',
-                        value: 37
-                    }, {
-                        label: 'Firefox',
-                        value: 30
-                    }, {
-                        label: 'Safari',
-                        value: 18
-                    }, {
-                        label: 'Opera',
-                        value: 12
-                    },
-                    {
-                        label: 'Other',
-                        value: 3
-                    }],
-                colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)', 'rgb(96, 125, 139)'],
-                formatter: function (y) {
-                    return y + '%';
-                }
-            });
-        }
-        var data = [], totalPoints = 110;
-        function getRandomData() {
-            if (data.length > 0)
-                data = data.slice(1);
-            while (data.length < totalPoints) {
-                var prev = data.length > 0 ? data[data.length - 1] : 50, y = prev + Math.random() * 10 - 5;
-                if (y < 0) {
-                    y = 0;
-                }
-                else if (y > 100) {
-                    y = 100;
-                }
-                data.push(y);
-            }
-            var res = [];
-            for (var i = 0; i < data.length; ++i) {
-                res.push([i, data[i]]);
-            }
-            return res;
-        }
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2427,6 +2330,9 @@ var HomeComponent = /** @class */ (function (_super) {
     return HomeComponent;
 }(_shared_app_component_base__WEBPACK_IMPORTED_MODULE_1__["AppComponentBase"]));
 
+function compare(a, b, isAsc) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}
 
 
 /***/ }),
@@ -2454,7 +2360,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RightSideBarComponent", function() { return RightSideBarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_app_component_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @shared/app-component-base */ "./src/shared/app-component-base.ts");
-/* harmony import */ var _shared_service_proxies_service_proxies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @shared/service-proxies/service-proxies */ "./src/shared/service-proxies/service-proxies.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -2479,12 +2384,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
 var RightSideBarComponent = /** @class */ (function (_super) {
     __extends(RightSideBarComponent, _super);
-    function RightSideBarComponent(injector, _configurationService) {
+    function RightSideBarComponent(injector) {
         var _this = _super.call(this, injector) || this;
-        _this._configurationService = _configurationService;
         _this.themes = [
             new UiThemeInfo("Red", "red"),
             new UiThemeInfo("Pink", "pink"),
@@ -2515,17 +2418,6 @@ var RightSideBarComponent = /** @class */ (function (_super) {
         $('body').addClass('theme-' + this.selectedThemeCssClass);
     };
     RightSideBarComponent.prototype.setTheme = function (theme) {
-        var _this = this;
-        var input = new _shared_service_proxies_service_proxies__WEBPACK_IMPORTED_MODULE_2__["ChangeUiThemeInput"]();
-        input.theme = theme.cssClass;
-        this._configurationService.changeUiTheme(input).subscribe(function () {
-            var $body = $('body');
-            $('.right-sidebar .demo-choose-skin li').removeClass('active');
-            $body.removeClass('theme-' + _this.selectedThemeCssClass);
-            $('.right-sidebar .demo-choose-skin li div.' + theme.cssClass).closest('li').addClass('active');
-            $body.addClass('theme-' + theme.cssClass);
-            _this.selectedThemeCssClass = theme.cssClass;
-        });
     };
     RightSideBarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2533,8 +2425,7 @@ var RightSideBarComponent = /** @class */ (function (_super) {
             selector: 'right-sidebar',
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewEncapsulation"].None
         }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"],
-            _shared_service_proxies_service_proxies__WEBPACK_IMPORTED_MODULE_2__["ConfigurationServiceProxy"]])
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injector"]])
     ], RightSideBarComponent);
     return RightSideBarComponent;
 }(_shared_app_component_base__WEBPACK_IMPORTED_MODULE_1__["AppComponentBase"]));
@@ -2777,7 +2668,7 @@ var SideBarUserAreaComponent = /** @class */ (function (_super) {
         return _this;
     }
     SideBarUserAreaComponent.prototype.ngOnInit = function () {
-        this.shownLoginName = "Halit Muslu";
+        this.shownLoginName = this.appSession.getShownLoginName();
     };
     SideBarUserAreaComponent.prototype.logout = function () {
         this._authService.logout();
@@ -2805,7 +2696,7 @@ var SideBarUserAreaComponent = /** @class */ (function (_super) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Search Bar -->\n<div class=\"search-bar\">\n    <div class=\"search-icon\">\n        <i class=\"material-icons\">search</i>\n    </div>\n    <input materialInput type=\"text\" placeholder=\"START TYPING...\">\n    <div class=\"close-search\">\n        <i class=\"material-icons\">close</i>\n    </div>\n</div> <!-- #END# Search Bar -->\n\n<nav class=\"navbar\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a href=\"javascript:void(0);\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar-collapse\" aria-expanded=\"false\"></a>\n            <a href=\"javascript:void(0);\" class=\"bars\"></a>\n            <a routerLink=\"/app/home\" class=\"navbar-brand\"><i class=\"fa fa-cubes\"></i> CaseStudy</a>\n        </div>\n        <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><a href=\"javascript:void(0);\" class=\"js-search\" data-close=\"true\"><i class=\"material-icons\">search</i></a></li>\n                <topbar-languageswitch></topbar-languageswitch>\n                <li class=\"pull-right\"><a href=\"javascript:void(0);\" class=\"js-right-sidebar\" data-close=\"true\"><i class=\"material-icons\">more_vert</i></a></li>\n            </ul>\n        </div>\n    </div>\n</nav>\n"
+module.exports = "<!-- Search Bar -->\n<div class=\"search-bar\">\n    <div class=\"search-icon\">\n        <i class=\"material-icons\">search</i>\n    </div>\n    <input materialInput type=\"text\" placeholder=\"START TYPING...\">\n    <div class=\"close-search\">\n        <i class=\"material-icons\">close</i>\n    </div>\n</div> <!-- #END# Search Bar -->\n\n<nav class=\"navbar\">\n    <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n            <a href=\"javascript:void(0);\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar-collapse\" aria-expanded=\"false\"></a>\n            <a href=\"javascript:void(0);\" class=\"bars\"></a>\n            <a routerLink=\"/app/home\" class=\"navbar-brand\"><i class=\"fa fa-cubes\"></i> CaseStudy</a>\n        </div>\n        <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><a href=\"javascript:void(0);\" class=\"js-search\" data-close=\"true\"><i class=\"material-icons\">search</i></a></li>\n           \n                <li class=\"pull-right\"><a href=\"javascript:void(0);\" class=\"js-right-sidebar\" data-close=\"true\"><i class=\"material-icons\">more_vert</i></a></li>\n            </ul>\n        </div>\n    </div>\n</nav>\n"
 
 /***/ }),
 

@@ -11,6 +11,9 @@
     <RootNamespace>CaseStudy</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CaseStudy.Core\CaseStudy.Core.csproj" />
   </ItemGroup>
 </Project>

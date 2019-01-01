@@ -10,7 +10,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from '@shared/shared.module';
 import { ServiceProxyModule } from '@shared/service-proxies/service-proxy.module';
 import { RootRoutingModule } from './root-routing.module';
-
+import { AppSessionService } from '@shared/session/app-session.service';
 import { AppConsts } from '@shared/AppConsts';
 import { API_BASE_URL } from '@shared/service-proxies/service-proxies';
 
@@ -32,8 +32,19 @@ export function appInitializerFactory(injector: Injector,
 
             AppPreBootstrap.run(appBaseUrl, () => {
                 abp.event.trigger('abp.dynamicScriptsInitialized');
-                abp.ui.clearBusy();
-                resolve();
+              
+                var appSessionService: AppSessionService = injector.get(AppSessionService);
+                appSessionService.init().then(
+                    () => {
+                        abp.ui.clearBusy();
+                        resolve(true);
+                    },
+                    (err) => {
+                        abp.ui.clearBusy();
+                        reject(err);
+                    }
+                );
+               
             });
         });
     }

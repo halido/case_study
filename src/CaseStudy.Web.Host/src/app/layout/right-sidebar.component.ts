@@ -1,6 +1,6 @@
 ﻿import { Component, Injector, ViewEncapsulation, OnInit } from '@angular/core';
 import { AppComponentBase } from '@shared/app-component-base';
-import { ConfigurationServiceProxy, ChangeUiThemeInput } from '@shared/service-proxies/service-proxies';
+import { ConfigurationServiceProxy } from '@shared/service-proxies/service-proxies';
 
 @Component({
     templateUrl: './right-sidebar.component.html',
@@ -35,8 +35,7 @@ export class RightSideBarComponent extends AppComponentBase implements OnInit {
     selectedThemeCssClass: string = "red";
 
     constructor(
-        injector: Injector,
-        private _configurationService: ConfigurationServiceProxy
+        injector: Injector,private _configurationService: ConfigurationServiceProxy
     ) {
         super(injector);
     }
@@ -47,18 +46,7 @@ export class RightSideBarComponent extends AppComponentBase implements OnInit {
     }
 
     setTheme(theme: UiThemeInfo): void {
-        const input = new ChangeUiThemeInput();
-        input.theme = theme.cssClass;
-        this._configurationService.changeUiTheme(input).subscribe(() => {
-            const $body = $('body');
-
-            $('.right-sidebar .demo-choose-skin li').removeClass('active');
-            $body.removeClass('theme-' + this.selectedThemeCssClass);
-            $('.right-sidebar .demo-choose-skin li div.' + theme.cssClass).closest('li').addClass('active');
-            $body.addClass('theme-' + theme.cssClass);
-
-            this.selectedThemeCssClass = theme.cssClass;
-        });
+      
     }
 }
 

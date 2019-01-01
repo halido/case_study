@@ -1,7 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
-import { SessionServiceProxy, GetCurrentLoginInformationsOutput, UserLoginInfoDto, ApplicationInfoDto, TenantLoginInfoDto } from '@shared/service-proxies/service-proxies'
+import { SessionServiceProxy, GetCurrentLoginInformationsOutput, ApplicationInfoDto,UserLoginInfoDto, TenantLoginInfoDto  } from '@shared/service-proxies/service-proxies'
 import { AbpMultiTenancyService } from '@abp/multi-tenancy/abp-multi-tenancy.service'
-
 
 @Injectable()
 export class AppSessionService {
@@ -37,24 +36,26 @@ export class AppSessionService {
     }
 
     getShownLoginName(): string {
-        return "Halit Muslu";
+        let userName = this.user ? this._user.userName : null;
+        return userName;
+
+
     }
 
     init(): Promise<boolean> {
-        return new Promise<boolean>((resolve, reject) => {
-            this._sessionService.getCurrentLoginInformations().toPromise().then((result: GetCurrentLoginInformationsOutput) => {
-                this._application = result.application;
-                this._user = new UserLoginInfoDto();
-                this._user.name = "Halit";
-                this._user.surname = "Muslu";
-                this._user.emailAddress ="";
-                this._tenant = new TenantLoginInfoDto();
-                this._tenant.name = "";
-                resolve(true);
-            }, (err) => {
-                reject(err);
-            });
+       return new Promise<boolean>((resolve, reject) => {
+
+   
+        this._sessionService.getCurrentLoginInformations().toPromise().then((result: GetCurrentLoginInformationsOutput) => {
+            this._application = result.application;
+            this._user = result.user;
+            this._tenant = result.tenant;
+            
+            resolve(true);
+        }, (err) => {
+            reject(err);
         });
+            });
     }
 
     changeTenantIfNeeded(tenantId?: number): boolean {

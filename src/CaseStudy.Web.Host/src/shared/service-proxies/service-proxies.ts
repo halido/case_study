@@ -116,7 +116,6 @@ export class HotelServiceProxy {
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    debugger;
                     return this.processUploadCsv(<any>response_);
                 } catch (e) {
                     return <Observable<CsvUploadResultDto>><any>_observableThrow(e);
@@ -426,7 +425,7 @@ export class HotelDto implements IHotelDto {
     stars!: number | undefined;
     contact!: string | undefined;
     phone!: string | undefined;
-    uri!: string | undefined;
+    url!: string | undefined;
 
     constructor(data?: IHotelDto) {
         if (data) {
@@ -444,7 +443,7 @@ export class HotelDto implements IHotelDto {
             this.stars = data["stars"];
             this.contact = data["contact"];
             this.phone = data["phone"];
-            this.uri = data["uri"];
+            this.url = data["url"];
         }
     }
 
@@ -462,7 +461,7 @@ export class HotelDto implements IHotelDto {
         data["stars"] = this.stars;
         data["contact"] = this.contact;
         data["phone"] = this.phone;
-        data["uri"] = this.uri;
+        data["url"] = this.url;
         return data; 
     }
 
@@ -480,7 +479,7 @@ export interface IHotelDto {
     stars: number | undefined;
     contact: string | undefined;
     phone: string | undefined;
-    uri: string | undefined;
+    url: string | undefined;
 }
 
 export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInformationsOutput {

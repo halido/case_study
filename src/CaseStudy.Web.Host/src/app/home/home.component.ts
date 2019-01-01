@@ -45,7 +45,7 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
     }
     onSort(event: SortEvent) {
         abp.ui.setBusy();
-        this._hotelService.getAll(this.fileName, `${event.field} ${(event.order == -1) ? " desc" : " asc"}`  , 0, 100).subscribe(data => {
+        this._hotelService.getAll(this.fileName, `${event.field} ${(event.order == -1) ? "desc" : "asc"}`  , 0, 100).subscribe(data => {
            
           this.hotels  =  data.items;
             abp.ui.clearBusy();
@@ -64,7 +64,7 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
             { field: 'stars', header: 'Stars' },
             { field: 'contact', header: 'Contact' },
             { field: 'phone', header: 'Phone' },
-            { field: 'uri', header: 'Uri' }
+            { field: 'url', header: 'Url' }
         ];
     }
     ngAfterViewInit(): void {

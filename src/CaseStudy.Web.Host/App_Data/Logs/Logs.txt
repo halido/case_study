@@ -13619,3 +13619,706 @@ INFO  2019-01-01 10:41:29,838 [80   ] ore.Mvc.Internal.ControllerActionInvoker -
 INFO  2019-01-01 10:41:29,838 [80   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
 INFO  2019-01-01 10:41:29,838 [80   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.1785ms
 INFO  2019-01-01 10:41:29,838 [80   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.798ms 200 application/json; charset=utf-8
+INFO  2019-01-01 10:47:51,314 [72   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=21f07b83d241488790c1a23cf8e33380&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 10:47:51,314 [72   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:47:51,314 [72   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2028ms 204 
+INFO  2019-01-01 10:47:51,369 [69   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=21f07b83d241488790c1a23cf8e33380&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 10:47:51,369 [69   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:47:51,370 [69   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 10:47:51,371 [69   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 10:47:51,372 [69   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.6637ms.
+INFO  2019-01-01 10:47:51,373 [69   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 10:47:51,373 [69   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.2645ms
+INFO  2019-01-01 10:47:51,373 [69   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.1235ms 200 application/json; charset=utf-8
+INFO  2019-01-01 10:49:01,496 [68   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 10:49:01,496 [68   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:01,496 [68   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2434ms 204 
+INFO  2019-01-01 10:49:01,525 [61   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 10:49:01,525 [61   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:01,525 [61   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 10:49:01,527 [61   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+INFO  2019-01-01 10:49:01,528 [61   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1.2848ms.
+INFO  2019-01-01 10:49:01,528 [61   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 2 ms from ::1 IP address with succeed.
+INFO  2019-01-01 10:49:01,528 [61   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 10:49:01,529 [61   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 3.2543ms
+INFO  2019-01-01 10:49:01,529 [61   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.9506ms 200 application/json; charset=utf-8
+INFO  2019-01-01 10:49:01,542 [68   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 10:49:01,542 [68   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:01,542 [68   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2304ms 204 
+INFO  2019-01-01 10:49:01,549 [65   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 10:49:01,549 [65   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:01,549 [65   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 10:49:01,550 [65   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 10:49:01,550 [65   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1268ms.
+INFO  2019-01-01 10:49:01,552 [65   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 10:49:01,552 [65   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 2.6217ms
+INFO  2019-01-01 10:49:01,552 [65   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.4397ms 200 application/json; charset=utf-8
+INFO  2019-01-01 10:49:29,742 [68   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 10:49:29,743 [68   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:29,743 [68   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1965ms 204 
+INFO  2019-01-01 10:49:29,776 [70   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 10:49:29,776 [70   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:29,777 [70   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 10:49:29,777 [70   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+INFO  2019-01-01 10:49:29,777 [70   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 0.2602ms.
+INFO  2019-01-01 10:49:29,778 [70   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 0 ms from ::1 IP address with succeed.
+INFO  2019-01-01 10:49:29,778 [70   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 10:49:29,778 [70   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 1.2225ms
+INFO  2019-01-01 10:49:29,778 [70   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.6992ms 200 application/json; charset=utf-8
+INFO  2019-01-01 10:49:29,797 [64   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 10:49:29,797 [64   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:29,797 [64   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2201ms 204 
+INFO  2019-01-01 10:49:29,804 [64   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 10:49:29,804 [64   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 10:49:29,805 [64   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 10:49:29,805 [64   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 10:49:29,805 [64   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.0887ms.
+INFO  2019-01-01 10:49:29,805 [64   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 10:49:29,806 [64   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 0.7918ms
+INFO  2019-01-01 10:49:29,806 [64   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2452ms 200 application/json; charset=utf-8
+DEBUG 2019-01-01 23:01:28,708 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-01 23:01:28,724 [1    ] Abp.Modules.AbpModuleManager             - Found 8 ABP modules in total.
+DEBUG 2019-01-01 23:01:28,729 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.Web.Host.Startup.CaseStudyWebHostModule, CaseStudy.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyWebCoreModule, CaseStudy.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyApplicationModule, CaseStudy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyCoreModule, CaseStudy.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,732 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,733 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,733 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:01:28,735 [1    ] Abp.Modules.AbpModuleManager             - 8 modules loaded.
+DEBUG 2019-01-01 23:01:28,878 [1    ] Abp.Localization.LocalizationManager     - Initializing 2 localization sources.
+DEBUG 2019-01-01 23:01:28,905 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-01 23:01:28,909 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-01-01 23:01:29,017 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-01 23:01:29,052 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 0 classes define auto mapping attributes
+INFO  2019-01-01 23:01:30,172 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-01-01 23:01:30,645 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 479.9311ms 200 text/html
+INFO  2019-01-01 23:01:30,664 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2019-01-01 23:01:30,665 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2019-01-01 23:01:30,691 [16   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.swagger.js was not modified
+INFO  2019-01-01 23:01:30,691 [13   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.js was not modified
+INFO  2019-01-01 23:01:30,696 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 30.691ms 304 application/javascript
+INFO  2019-01-01 23:01:30,696 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 31.2852ms 304 application/javascript
+INFO  2019-01-01 23:01:30,797 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-01-01 23:01:30,944 [13   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 146.5322ms 200 application/json;charset=utf-8
+INFO  2019-01-01 23:02:18,095 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 23:02:18,107 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:18,110 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 15.0536ms 204 
+INFO  2019-01-01 23:02:18,120 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 23:02:18,120 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:18,171 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 23:02:18,262 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+WARN  2019-01-01 23:02:18,327 [11   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+INFO  2019-01-01 23:02:18,452 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 189.2664ms.
+INFO  2019-01-01 23:02:18,462 [11   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 215 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:02:18,480 [11   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:18,515 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 342.0667ms
+INFO  2019-01-01 23:02:18,516 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 396.475ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:18,523 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:02:18,523 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:18,524 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2306ms 204 
+INFO  2019-01-01 23:02:18,526 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:02:18,526 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:18,534 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 23:02:18,543 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 23:02:18,547 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3.8687ms.
+INFO  2019-01-01 23:02:18,564 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:18,578 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 43.2728ms
+INFO  2019-01-01 23:02:18,578 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.8784ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:23,917 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/Hotel/UploadCsv  
+INFO  2019-01-01 23:02:23,917 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:23,917 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1572ms 204 
+INFO  2019-01-01 23:02:23,927 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:21021/api/Hotel/UploadCsv multipart/form-data; boundary=----WebKitFormBoundarym71XKfKJ2mVM9Oxb 531432
+INFO  2019-01-01 23:02:23,928 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:23,946 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "UploadCsv", controller = "Hotel", area = ""}. Executing action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host)
+INFO  2019-01-01 23:02:24,114 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) with arguments (Microsoft.AspNetCore.Http.Internal.FormFile) - Validation state: Valid
+INFO  2019-01-01 23:02:24,121 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.7965ms.
+INFO  2019-01-01 23:02:24,121 [6    ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: CaseStudy.Web.Host.Controllers.HotelController.UploadCsv is executed by an anonymous user in 17 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:02:24,124 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:24,126 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) in 180.902ms
+INFO  2019-01-01 23:02:24,132 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 204.2401ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:24,144 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:24,144 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:24,144 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1789ms 204 
+INFO  2019-01-01 23:02:24,147 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:24,147 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:24,157 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:24,191 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:24,203 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 11.7973ms.
+INFO  2019-01-01 23:02:24,204 [17   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:24,207 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 49.7217ms
+INFO  2019-01-01 23:02:24,207 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 60.2681ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:25,187 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:25,187 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:25,188 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1621ms 204 
+INFO  2019-01-01 23:02:25,211 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:25,211 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:25,214 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:25,220 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:25,282 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 61.82ms.
+INFO  2019-01-01 23:02:25,282 [18   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:25,282 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 68.4214ms
+INFO  2019-01-01 23:02:25,282 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 71.2832ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:26,029 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:26,029 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:26,029 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2508ms 204 
+INFO  2019-01-01 23:02:26,050 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:26,050 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:26,051 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:26,051 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:26,053 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.8139ms.
+INFO  2019-01-01 23:02:26,054 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:26,054 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.2102ms
+INFO  2019-01-01 23:02:26,054 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.0095ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:26,944 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:26,944 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:26,944 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:26,945 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:26,946 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.5991ms.
+INFO  2019-01-01 23:02:26,947 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:26,947 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.8009ms
+INFO  2019-01-01 23:02:26,947 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.2506ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:27,924 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=phone%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:27,924 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:27,924 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.209ms 204 
+INFO  2019-01-01 23:02:27,947 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=phone%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:27,947 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:27,948 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:27,949 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:27,952 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3.574ms.
+INFO  2019-01-01 23:02:27,953 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:27,953 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 5.2812ms
+INFO  2019-01-01 23:02:27,953 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.3169ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:28,736 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:28,736 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:28,736 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1592ms 204 
+INFO  2019-01-01 23:02:28,756 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:28,756 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:28,757 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:28,758 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:02:28,764 [11   ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 5)
+INFO  2019-01-01 23:02:28,777 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:28,778 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 21.4974ms
+INFO  2019-01-01 23:02:28,779 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 22.2421ms 500 application/json; charset=utf-8
+INFO  2019-01-01 23:02:30,645 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:30,645 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:30,645 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1547ms 204 
+INFO  2019-01-01 23:02:30,665 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:30,665 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:30,666 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:30,667 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:02:30,668 [11   ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 5)
+INFO  2019-01-01 23:02:30,668 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:30,668 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.579ms
+INFO  2019-01-01 23:02:30,668 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.3584ms 500 application/json; charset=utf-8
+INFO  2019-01-01 23:02:33,110 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:33,110 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:33,111 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:33,112 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:02:33,113 [6    ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 5)
+INFO  2019-01-01 23:02:33,113 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:33,113 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 1.8662ms
+INFO  2019-01-01 23:02:33,113 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 2.5244ms 500 application/json; charset=utf-8
+INFO  2019-01-01 23:02:34,502 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=contact%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:34,502 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:34,502 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1732ms 204 
+INFO  2019-01-01 23:02:34,530 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=contact%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:34,530 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:34,531 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:34,531 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:34,533 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.0221ms.
+INFO  2019-01-01 23:02:34,534 [18   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:34,534 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.3664ms
+INFO  2019-01-01 23:02:34,534 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.851ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:35,344 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:35,344 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:35,344 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1965ms 204 
+INFO  2019-01-01 23:02:35,365 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:35,365 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:35,366 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:35,366 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:35,368 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.8816ms.
+INFO  2019-01-01 23:02:35,369 [17   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:35,369 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.0418ms
+INFO  2019-01-01 23:02:35,369 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.7916ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:35,993 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=address%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:35,993 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:35,993 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1462ms 204 
+INFO  2019-01-01 23:02:36,008 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=address%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:36,008 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:36,008 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:36,009 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:36,011 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.8121ms.
+INFO  2019-01-01 23:02:36,011 [17   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:36,011 [17   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.1744ms
+INFO  2019-01-01 23:02:36,011 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.6511ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:36,647 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=name%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:36,647 [17   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:36,647 [17   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1683ms 204 
+INFO  2019-01-01 23:02:36,665 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=name%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:36,665 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:36,666 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:36,666 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:36,668 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.7345ms.
+INFO  2019-01-01 23:02:36,668 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:36,669 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.9169ms
+INFO  2019-01-01 23:02:36,669 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.3817ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:37,500 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=stars%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:37,500 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:37,500 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:37,501 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:02:37,502 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.5024ms.
+INFO  2019-01-01 23:02:37,502 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:37,503 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.7639ms
+INFO  2019-01-01 23:02:37,503 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.2477ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:02:43,553 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:43,553 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:43,553 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.178ms 204 
+INFO  2019-01-01 23:02:43,574 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:02:43,574 [18   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:02:43,575 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:02:43,576 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:02:43,578 [18   ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 5)
+INFO  2019-01-01 23:02:43,578 [18   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:02:43,578 [18   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.5181ms
+INFO  2019-01-01 23:02:43,578 [18   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.4673ms 500 application/json; charset=utf-8
+INFO  2019-01-01 23:12:14,619 [36   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:12:14,619 [36   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:12:14,619 [36   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1774ms 204 
+INFO  2019-01-01 23:12:14,645 [38   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=44414afcf8054816911b0268b89c72eb&Sorting=uri%20%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:12:14,646 [38   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:12:14,646 [38   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:12:14,647 [38   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:12:14,649 [38   ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 5)
+INFO  2019-01-01 23:12:14,649 [38   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:12:14,649 [38   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.9434ms
+INFO  2019-01-01 23:12:14,649 [38   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.7009ms 500 application/json; charset=utf-8
+INFO  2019-01-01 23:13:30,003 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 23:13:30,003 [44   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:30,003 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2084ms 204 
+INFO  2019-01-01 23:13:30,040 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 23:13:30,040 [46   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:30,042 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 23:13:30,049 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+INFO  2019-01-01 23:13:30,052 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 2.4055ms.
+INFO  2019-01-01 23:13:30,052 [46   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 3 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:13:30,053 [46   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:30,053 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 11.1092ms
+INFO  2019-01-01 23:13:30,053 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 13.4741ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:30,068 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:13:30,068 [46   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:30,068 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1681ms 204 
+INFO  2019-01-01 23:13:30,074 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:13:30,074 [46   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:30,075 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 23:13:30,077 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 23:13:30,077 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1584ms.
+INFO  2019-01-01 23:13:30,077 [46   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:30,078 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 2.5284ms
+INFO  2019-01-01 23:13:30,078 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.3481ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:34,835 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/Hotel/UploadCsv  
+INFO  2019-01-01 23:13:34,835 [46   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:34,835 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.205ms 204 
+INFO  2019-01-01 23:13:34,847 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:21021/api/Hotel/UploadCsv multipart/form-data; boundary=----WebKitFormBoundaryRp3FlHQCETxR18on 531432
+INFO  2019-01-01 23:13:34,847 [46   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:34,848 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "UploadCsv", controller = "Hotel", area = ""}. Executing action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host)
+INFO  2019-01-01 23:13:34,854 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) with arguments (Microsoft.AspNetCore.Http.Internal.FormFile) - Validation state: Valid
+INFO  2019-01-01 23:13:34,857 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3.0574ms.
+INFO  2019-01-01 23:13:34,857 [45   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: CaseStudy.Web.Host.Controllers.HotelController.UploadCsv is executed by an anonymous user in 3 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:13:34,857 [45   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:34,858 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) in 9.5431ms
+INFO  2019-01-01 23:13:34,859 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 11.3237ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:34,874 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:34,875 [45   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:34,875 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.3475ms 204 
+INFO  2019-01-01 23:13:34,880 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:34,880 [45   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:34,881 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:13:34,882 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:13:34,884 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.1409ms.
+INFO  2019-01-01 23:13:34,884 [45   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:34,884 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.8097ms
+INFO  2019-01-01 23:13:34,884 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.9688ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:35,524 [47   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=name%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:35,524 [47   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:35,524 [47   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2096ms 204 
+INFO  2019-01-01 23:13:35,562 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=name%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:35,562 [46   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:35,563 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:13:35,563 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:13:35,565 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.5752ms.
+INFO  2019-01-01 23:13:35,565 [46   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:35,566 [46   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.9937ms
+INFO  2019-01-01 23:13:35,566 [46   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.024ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:36,361 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=name%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:36,361 [44   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:36,361 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2281ms 204 
+INFO  2019-01-01 23:13:36,383 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=name%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:36,384 [44   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:36,384 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:13:36,385 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:13:36,387 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.7518ms.
+INFO  2019-01-01 23:13:36,388 [44   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:36,388 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.851ms
+INFO  2019-01-01 23:13:36,389 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.6054ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:37,354 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=address%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:37,354 [45   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:37,354 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1624ms 204 
+INFO  2019-01-01 23:13:37,375 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=address%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:37,375 [45   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:37,376 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:13:37,377 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:13:37,379 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.0755ms.
+INFO  2019-01-01 23:13:37,380 [45   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:37,380 [45   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 4.0024ms
+INFO  2019-01-01 23:13:37,380 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.9638ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:38,144 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=stars%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:38,144 [45   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:38,144 [45   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1575ms 204 
+INFO  2019-01-01 23:13:38,168 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=stars%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:38,168 [44   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:38,169 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:13:38,170 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:13:38,172 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.1617ms.
+INFO  2019-01-01 23:13:38,172 [44   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:38,173 [44   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.8667ms
+INFO  2019-01-01 23:13:38,173 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.9012ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:13:39,180 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=uri%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:39,180 [44   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:39,180 [44   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2338ms 204 
+INFO  2019-01-01 23:13:39,204 [47   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=uri%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:13:39,204 [47   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:13:39,205 [47   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:13:39,206 [47   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:13:39,207 [47   ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 4)
+INFO  2019-01-01 23:13:39,207 [47   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:13:39,207 [47   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 2.2977ms
+INFO  2019-01-01 23:13:39,207 [47   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.4377ms 500 application/json; charset=utf-8
+DEBUG 2019-01-01 23:14:19,584 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-01 23:14:19,676 [1    ] Abp.Modules.AbpModuleManager             - Found 8 ABP modules in total.
+DEBUG 2019-01-01 23:14:19,681 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.Web.Host.Startup.CaseStudyWebHostModule, CaseStudy.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,684 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyWebCoreModule, CaseStudy.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,684 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyApplicationModule, CaseStudy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,684 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyCoreModule, CaseStudy.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,684 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,685 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,685 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,685 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:14:19,688 [1    ] Abp.Modules.AbpModuleManager             - 8 modules loaded.
+DEBUG 2019-01-01 23:14:19,864 [1    ] Abp.Localization.LocalizationManager     - Initializing 2 localization sources.
+DEBUG 2019-01-01 23:14:19,890 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-01 23:14:19,893 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-01-01 23:14:20,084 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-01 23:14:20,134 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 0 classes define auto mapping attributes
+INFO  2019-01-01 23:14:21,451 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-01-01 23:14:21,945 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 502.2921ms 200 text/html
+INFO  2019-01-01 23:14:22,111 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-01-01 23:14:22,246 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 134.4857ms 200 application/json;charset=utf-8
+INFO  2019-01-01 23:14:24,072 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=uri%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:14:24,085 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:14:24,093 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 20.4091ms 204 
+INFO  2019-01-01 23:14:24,123 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=d9143d1112a94478b3136049673d8b5a&Sorting=uri%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:14:24,125 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:14:24,222 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:14:24,386 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:15:05,031 [7    ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 4)
+INFO  2019-01-01 23:15:05,066 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:15:05,101 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 40873.752ms
+INFO  2019-01-01 23:15:05,104 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 40980.3602ms 500 application/json; charset=utf-8
+INFO  2019-01-01 23:15:27,847 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 23:15:27,850 [10   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:27,855 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.1573ms 204 
+INFO  2019-01-01 23:15:27,897 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 23:15:27,899 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:27,919 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 23:15:27,953 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+WARN  2019-01-01 23:15:28,028 [11   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+INFO  2019-01-01 23:15:28,171 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 214.1047ms.
+INFO  2019-01-01 23:15:28,177 [11   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 224 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:15:28,193 [11   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:15:28,219 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 298.531ms
+INFO  2019-01-01 23:15:28,220 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 323.5624ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:15:28,228 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:15:28,230 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:28,232 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.157ms 204 
+INFO  2019-01-01 23:15:28,234 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:15:28,235 [10   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:28,241 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 23:15:28,265 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 23:15:28,270 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3.1232ms.
+INFO  2019-01-01 23:15:28,273 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:15:28,284 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 41.441ms
+INFO  2019-01-01 23:15:28,286 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 51.522ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:15:32,676 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/Hotel/UploadCsv  
+INFO  2019-01-01 23:15:32,678 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:32,679 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.4437ms 204 
+INFO  2019-01-01 23:15:32,691 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:21021/api/Hotel/UploadCsv multipart/form-data; boundary=----WebKitFormBoundaryGprCe6CWYYUBWLAJ 531432
+INFO  2019-01-01 23:15:32,693 [10   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:32,700 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "UploadCsv", controller = "Hotel", area = ""}. Executing action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host)
+INFO  2019-01-01 23:15:32,840 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) with arguments (Microsoft.AspNetCore.Http.Internal.FormFile) - Validation state: Valid
+INFO  2019-01-01 23:15:32,848 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.6116ms.
+INFO  2019-01-01 23:15:32,848 [6    ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: CaseStudy.Web.Host.Controllers.HotelController.UploadCsv is executed by an anonymous user in 13 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:15:32,852 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:15:32,857 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) in 154.9583ms
+INFO  2019-01-01 23:15:32,864 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 173.6526ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:15:32,879 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=97499ab05d56444fa36db5e48f3ff6b6&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:15:32,881 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:32,884 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.1966ms 204 
+INFO  2019-01-01 23:15:32,887 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=97499ab05d56444fa36db5e48f3ff6b6&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:15:32,889 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:15:32,894 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:15:32,901 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:15:36,509 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3605.832ms.
+INFO  2019-01-01 23:15:36,511 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:15:36,516 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3620.2608ms
+INFO  2019-01-01 23:15:36,518 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3631.6064ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:16:00,076 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=97499ab05d56444fa36db5e48f3ff6b6&Sorting=Uri%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:16:00,078 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:16:00,079 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.0199ms 204 
+INFO  2019-01-01 23:16:00,106 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=97499ab05d56444fa36db5e48f3ff6b6&Sorting=Uri%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:16:00,108 [11   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:16:00,110 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:16:00,113 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:16:08,793 [11   ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 4)
+INFO  2019-01-01 23:16:08,794 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:16:08,796 [11   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 8684.0202ms
+INFO  2019-01-01 23:16:08,798 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 8692.0014ms 500 application/json; charset=utf-8
+DEBUG 2019-01-01 23:18:03,921 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-01 23:18:03,958 [1    ] Abp.Modules.AbpModuleManager             - Found 8 ABP modules in total.
+DEBUG 2019-01-01 23:18:03,967 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.Web.Host.Startup.CaseStudyWebHostModule, CaseStudy.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,969 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyWebCoreModule, CaseStudy.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,970 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyApplicationModule, CaseStudy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,970 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyCoreModule, CaseStudy.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,971 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,972 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,972 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:18:03,974 [1    ] Abp.Modules.AbpModuleManager             - 8 modules loaded.
+DEBUG 2019-01-01 23:18:04,151 [1    ] Abp.Localization.LocalizationManager     - Initializing 2 localization sources.
+DEBUG 2019-01-01 23:18:04,181 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-01 23:18:04,185 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-01-01 23:18:04,373 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-01 23:18:04,421 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 0 classes define auto mapping attributes
+INFO  2019-01-01 23:18:06,177 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-01-01 23:18:06,688 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 516.8793ms 200 text/html
+INFO  2019-01-01 23:18:06,835 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-01-01 23:18:06,974 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 138.4947ms 200 application/json;charset=utf-8
+INFO  2019-01-01 23:18:19,689 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 23:18:19,708 [16   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:19,720 [16   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 36.7331ms 204 
+INFO  2019-01-01 23:18:19,750 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 23:18:19,753 [10   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:19,832 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 23:18:19,942 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+WARN  2019-01-01 23:18:20,008 [10   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+INFO  2019-01-01 23:18:20,146 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 200.5472ms.
+INFO  2019-01-01 23:18:20,157 [10   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 237 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:18:20,180 [10   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:18:20,216 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 379.3838ms
+INFO  2019-01-01 23:18:20,219 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 469.1284ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:18:20,227 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:18:20,229 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:20,231 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.3719ms 204 
+INFO  2019-01-01 23:18:20,234 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:18:20,236 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:20,247 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 23:18:20,280 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 23:18:20,286 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3.8314ms.
+INFO  2019-01-01 23:18:20,302 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:18:20,316 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 67.117ms
+INFO  2019-01-01 23:18:20,318 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 83.7576ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:18:25,394 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/Hotel/UploadCsv  
+INFO  2019-01-01 23:18:25,396 [10   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:25,397 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.3749ms 204 
+INFO  2019-01-01 23:18:25,409 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:21021/api/Hotel/UploadCsv multipart/form-data; boundary=----WebKitFormBoundarybM9RWZenspFktqDx 531432
+INFO  2019-01-01 23:18:25,414 [12   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:25,442 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "UploadCsv", controller = "Hotel", area = ""}. Executing action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host)
+INFO  2019-01-01 23:18:25,635 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) with arguments (Microsoft.AspNetCore.Http.Internal.FormFile) - Validation state: Valid
+INFO  2019-01-01 23:18:25,654 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15.4666ms.
+INFO  2019-01-01 23:18:25,655 [6    ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: CaseStudy.Web.Host.Controllers.HotelController.UploadCsv is executed by an anonymous user in 30 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:18:25,659 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:18:25,665 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) in 220.5849ms
+INFO  2019-01-01 23:18:25,674 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 267.919ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:18:25,691 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=8d262423017e4940844d3fb24c47b367&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:18:25,694 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:25,697 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.0568ms 204 
+INFO  2019-01-01 23:18:25,700 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=8d262423017e4940844d3fb24c47b367&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:18:25,702 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:25,716 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:18:25,761 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:18:25,784 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 21.3999ms.
+INFO  2019-01-01 23:18:25,785 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:18:25,790 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 72.1852ms
+INFO  2019-01-01 23:18:25,793 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 93.3695ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:18:29,937 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=8d262423017e4940844d3fb24c47b367&Sorting=uri%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:18:29,939 [12   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:29,941 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.7998ms 204 
+INFO  2019-01-01 23:18:29,965 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=8d262423017e4940844d3fb24c47b367&Sorting=uri%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:18:29,968 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:18:29,974 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:18:29,982 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+ERROR 2019-01-01 23:18:30,228 [7    ] Mvc.ExceptionHandling.AbpExceptionFilter - '.' or '(' or string literal expected
+'.' or '(' or string literal expected (at index 4)
+INFO  2019-01-01 23:18:30,244 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:18:30,247 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 271.6183ms
+INFO  2019-01-01 23:18:30,249 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 284.0673ms 500 application/json; charset=utf-8
+DEBUG 2019-01-01 23:23:48,262 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-01-01 23:23:48,276 [1    ] Abp.Modules.AbpModuleManager             - Found 8 ABP modules in total.
+DEBUG 2019-01-01 23:23:48,281 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.Web.Host.Startup.CaseStudyWebHostModule, CaseStudy.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyWebCoreModule, CaseStudy.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,283 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyApplicationModule, CaseStudy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CaseStudy.CaseStudyCoreModule, CaseStudy.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,284 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=4.0.1.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-01-01 23:23:48,286 [1    ] Abp.Modules.AbpModuleManager             - 8 modules loaded.
+DEBUG 2019-01-01 23:23:48,417 [1    ] Abp.Localization.LocalizationManager     - Initializing 2 localization sources.
+DEBUG 2019-01-01 23:23:48,440 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-01-01 23:23:48,443 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-01-01 23:23:48,552 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-01 23:23:48,584 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 0 classes define auto mapping attributes
+INFO  2019-01-01 23:23:49,200 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-01-01 23:23:49,609 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 413.4731ms 200 text/html
+INFO  2019-01-01 23:23:49,757 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-01-01 23:23:49,892 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 135.4884ms 200 application/json;charset=utf-8
+INFO  2019-01-01 23:23:56,843 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-01-01 23:23:56,844 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1.2575ms 200 application/json;charset=utf-8
+INFO  2019-01-01 23:24:01,733 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 23:24:01,742 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:01,748 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 14.0766ms 204 
+INFO  2019-01-01 23:24:01,751 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 23:24:01,751 [12   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:01,805 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 23:24:01,897 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+WARN  2019-01-01 23:24:01,979 [12   ] Abp.Logging.LogHelper                    - ISettingStore is not implemented, using DefaultConfigSettingStore which does not support GetAllListAsync.
+INFO  2019-01-01 23:24:02,094 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 195.7958ms.
+INFO  2019-01-01 23:24:02,105 [12   ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 223 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:24:02,123 [12   ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:02,167 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 357.8386ms
+INFO  2019-01-01 23:24:02,167 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 416.7664ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:02,177 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:24:02,177 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:02,178 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2523ms 204 
+INFO  2019-01-01 23:24:02,181 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:24:02,181 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:02,193 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 23:24:02,201 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 23:24:02,205 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 4.4987ms.
+INFO  2019-01-01 23:24:02,226 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:02,238 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 45.4861ms
+INFO  2019-01-01 23:24:02,238 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 56.8713ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:19,412 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/AbpUserConfiguration/GetAll  
+INFO  2019-01-01 23:24:19,413 [12   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:19,413 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1666ms 204 
+INFO  2019-01-01 23:24:19,415 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/AbpUserConfiguration/GetAll application/json 
+INFO  2019-01-01 23:24:19,415 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:19,417 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpUserConfiguration", area = ""}. Executing action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore)
+INFO  2019-01-01 23:24:19,418 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) - Validation state: Valid
+INFO  2019-01-01 23:24:19,419 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore), returned result Microsoft.AspNetCore.Mvc.JsonResult in 0.7159ms.
+INFO  2019-01-01 23:24:19,419 [7    ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll is executed by an anonymous user in 1 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:24:19,419 [7    ] matters.Json.Internal.JsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:19,419 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpUserConfigurationController.GetAll (Abp.AspNetCore) in 2.0901ms
+INFO  2019-01-01 23:24:19,419 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 3.8377ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:19,433 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:24:19,433 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:19,433 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1203ms 204 
+INFO  2019-01-01 23:24:19,438 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2019-01-01 23:24:19,438 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:19,440 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application)
+INFO  2019-01-01 23:24:19,444 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) - Validation state: Valid
+INFO  2019-01-01 23:24:19,444 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.3316ms.
+INFO  2019-01-01 23:24:19,444 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:19,444 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Sessions.SessionAppService.GetCurrentLoginInformations (CaseStudy.Application) in 4.2874ms
+INFO  2019-01-01 23:24:19,444 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 6.1101ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:31,118 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/Hotel/UploadCsv  
+INFO  2019-01-01 23:24:31,118 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:31,118 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1871ms 204 
+INFO  2019-01-01 23:24:31,133 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 POST http://localhost:21021/api/Hotel/UploadCsv multipart/form-data; boundary=----WebKitFormBoundaryOnWzjSkI31F28ni9 531432
+INFO  2019-01-01 23:24:31,133 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:31,151 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {action = "UploadCsv", controller = "Hotel", area = ""}. Executing action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host)
+INFO  2019-01-01 23:24:31,322 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) with arguments (Microsoft.AspNetCore.Http.Internal.FormFile) - Validation state: Valid
+INFO  2019-01-01 23:24:31,328 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.0657ms.
+INFO  2019-01-01 23:24:31,328 [7    ] Abp.Auditing.SimpleLogAuditingStore      - AUDIT LOG: CaseStudy.Web.Host.Controllers.HotelController.UploadCsv is executed by an anonymous user in 21 ms from ::1 IP address with succeed.
+INFO  2019-01-01 23:24:31,330 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:31,333 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Web.Host.Controllers.HotelController.UploadCsv (CaseStudy.Web.Host) in 181.9547ms
+INFO  2019-01-01 23:24:31,337 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 203.6109ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:31,351 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:31,352 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:31,352 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1664ms 204 
+INFO  2019-01-01 23:24:31,357 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:31,357 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:31,370 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:24:31,403 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:24:31,411 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 8.4517ms.
+INFO  2019-01-01 23:24:31,412 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:31,415 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 44.4103ms
+INFO  2019-01-01 23:24:31,415 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 57.5918ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:32,735 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=url%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:32,735 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:32,735 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1618ms 204 
+INFO  2019-01-01 23:24:32,772 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=url%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:32,772 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:32,772 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:24:32,779 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:24:32,833 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 54.4293ms.
+INFO  2019-01-01 23:24:32,833 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:32,834 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 61.3436ms
+INFO  2019-01-01 23:24:32,834 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 62.1289ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:33,545 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=url%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:33,545 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:33,545 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.219ms 204 
+INFO  2019-01-01 23:24:33,568 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=url%20desc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:33,568 [14   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:33,569 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:24:33,570 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:24:33,573 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.6129ms.
+INFO  2019-01-01 23:24:33,573 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:33,573 [14   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 4.5778ms
+INFO  2019-01-01 23:24:33,573 [14   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 5.329ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:34,734 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=phone%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:34,734 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:34,735 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.2005ms 204 
+INFO  2019-01-01 23:24:34,761 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=phone%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:34,761 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:34,762 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:24:34,763 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:24:34,766 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 2.0542ms.
+INFO  2019-01-01 23:24:34,766 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:34,766 [7    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 4.1773ms
+INFO  2019-01-01 23:24:34,766 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.8241ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:35,503 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=contact%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:35,503 [7    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:35,503 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1587ms 204 
+INFO  2019-01-01 23:24:35,524 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=contact%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:35,524 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:35,525 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:24:35,526 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:24:35,528 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1.7197ms.
+INFO  2019-01-01 23:24:35,528 [6    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:35,529 [6    ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 3.8385ms
+INFO  2019-01-01 23:24:35,529 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 4.7638ms 200 application/json; charset=utf-8
+INFO  2019-01-01 23:24:36,510 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 OPTIONS http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=stars%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:36,510 [6    ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:36,510 [6    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 0.1336ms 204 
+INFO  2019-01-01 23:24:36,535 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Hotel/GetAll?FileId=45f74621e1174daaaea324c249c05c93&Sorting=stars%20asc&SkipCount=0&MaxResultCount=100  
+INFO  2019-01-01 23:24:36,535 [12   ] pNetCore.Cors.Infrastructure.CorsService - Policy execution successful.
+INFO  2019-01-01 23:24:36,536 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetAll", controller = "Hotel"}. Executing action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application)
+INFO  2019-01-01 23:24:36,537 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) with arguments (CaseStudy.Hotel.Dto.PagedHotelResultRequestDto) - Validation state: Valid
+INFO  2019-01-01 23:24:36,541 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 4.2541ms.
+INFO  2019-01-01 23:24:36,542 [12   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-01-01 23:24:36,542 [12   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action CaseStudy.Hotel.HotelAppService.GetAll (CaseStudy.Application) in 6.3638ms
+INFO  2019-01-01 23:24:36,542 [12   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 7.0658ms 200 application/json; charset=utf-8
+DEBUG 2019-01-02 00:22:35,646 [74   ] Abp.Modules.AbpModuleManager             - Shutting down has been started
+DEBUG 2019-01-02 00:22:35,648 [74   ] Abp.BackgroundJobs.BackgroundJobManager  - Stop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-02 00:22:35,649 [74   ] Abp.BackgroundJobs.BackgroundJobManager  - WaitToStop background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2019-01-02 00:22:35,649 [74   ] Abp.Modules.AbpModuleManager             - Shutting down completed.

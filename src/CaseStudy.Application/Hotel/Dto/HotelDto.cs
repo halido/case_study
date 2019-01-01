@@ -12,7 +12,7 @@ namespace CaseStudy.Hotel.Dto
         public int  Stars {get;set;}
         public string Contact { get; set; }
         public string Phone { get; set; }
-        public string Uri { get; set; }
+        public string Url { get; set; }
     }
 
    public class PagedHotelResultRequestDto : PagedAndSortedResultRequestDto

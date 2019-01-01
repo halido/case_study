@@ -79,7 +79,7 @@ namespace CaseStudy.Hotel
                     Contact = $"Contact {j}",
                     Name = $"Name {j}",
                     Phone = $"Phone {j}",
-                    Uri = $"Uri {j}",
+                    Url = $"Url {j}",
                     Stars = j
 
                 });

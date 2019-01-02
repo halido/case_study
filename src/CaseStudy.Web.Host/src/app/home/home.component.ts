@@ -4,6 +4,7 @@ import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { HotelServiceProxy, CsvUploadResultDto, FileParameter, HotelDto } from '@shared/service-proxies/service-proxies';
 import { LazyLoadEvent } from 'primeng/api';
 import { DataTable } from 'primeng/datatable'
+import { error } from '@angular/compiler/src/util';
 @Component({
     templateUrl: './home.component.html',
     animations: [appModuleAnimation()]
@@ -42,10 +43,14 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
                 data: file,
                 fileName: file.name
             };
+            abp.ui.setBusy();
             this._hotelService.uploadCsv(fileData)
                 .subscribe((result: CsvUploadResultDto) => {
                     this.ViewData(result);
-
+                    abp.ui.clearBusy();
+                },error=>{
+                    abp.message.error(error);
+                    abp.ui.clearBusy();
                 });;
         }
     }

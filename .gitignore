@@ -250,3 +250,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+src/CaseStudy.Web.Host/wwwroot/Upload/

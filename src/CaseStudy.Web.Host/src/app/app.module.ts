@@ -16,12 +16,10 @@ import { ServiceProxyModule } from '@shared/service-proxies/service-proxy.module
 import { SharedModule } from '@shared/shared.module';
 
 import { HomeComponent } from '@app/home/home.component';
-import { AboutComponent } from '@app/about/about.component';
 import { TopBarComponent } from '@app/layout/topbar.component';
 import { SideBarUserAreaComponent } from '@app/layout/sidebar-user-area.component';
 import { SideBarNavComponent } from '@app/layout/sidebar-nav.component';
 import { SideBarFooterComponent } from '@app/layout/sidebar-footer.component';
-import { RightSideBarComponent } from '@app/layout/right-sidebar.component';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
 import { DropdownModule } from 'primeng/dropdown';
@@ -31,12 +29,10 @@ import {  ButtonModule } from 'primeng/button';
     declarations: [
         AppComponent,
         HomeComponent,
-        AboutComponent,
         TopBarComponent,
         SideBarUserAreaComponent,
         SideBarNavComponent,
-        SideBarFooterComponent,
-        RightSideBarComponent
+        SideBarFooterComponent
 
     ],
     imports: [

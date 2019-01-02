@@ -50,7 +50,7 @@ or
 
     npm run
 
-> Sample Csv File is located under **root**
+> Sample Csv File **hotels.csv** is located in **root** folder
 
 > Uploaded Csv Files & Exported Files are located in **src/CaseStudy.Web.Host/wwwroot/Upload**
  
@@ -59,7 +59,7 @@ or
 
 - AspnetBoilerPlate
 <https://github.com/aspnetboilerplate/module-zero-core-template>
-- UI Components for Angular <https://www.primefaces.org/primeng>
+- PrimeNG UI Components for Angular <https://www.primefaces.org/primeng>
 - Extended Xml Serializer for .Net <https://github.com/wojtpl2/ExtendedXmlSerializer>
 - The .NET Standard / .NET Core version from the System Linq Dynamic functionality. <https://github.com/StefH/System.Linq.Dynamic.Core/>
 - CsvHelper https://github.com/JoshClose/CsvHelper

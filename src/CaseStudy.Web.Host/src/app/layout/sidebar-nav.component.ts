@@ -10,10 +10,7 @@ import { MenuItem } from '@shared/layout/menu-item';
 export class SideBarNavComponent extends AppComponentBase {
 
     menuItems: MenuItem[] = [
-        new MenuItem(this.l("HomePage"), "", "home", "/app/home"),
-        new MenuItem(this.l("About"), "", "info", "/app/about")
-
-       
+        new MenuItem(this.l("HomePage"), "", "home", "/app/home")
     ];
 
     constructor(

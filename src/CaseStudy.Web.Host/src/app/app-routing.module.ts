@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 
 @NgModule({
     imports: [
@@ -11,9 +10,9 @@ import { AboutComponent } from './about/about.component';
                 path: '',
                 component: AppComponent,
                 children: [
-                    { path: 'home', component: HomeComponent},
+                    { path: 'home', component: HomeComponent}
                 
-                    { path: 'about', component: AboutComponent }
+                  
                 ]
             }
         ])

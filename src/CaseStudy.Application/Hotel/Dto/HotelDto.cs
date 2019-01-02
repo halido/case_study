@@ -1,4 +1,4 @@
-﻿using Abp.Application.Services.Dto;
+﻿using System.Linq.Dynamic.Core.CustomTypeProviders;
 using CsvHelper.Configuration.Attributes;
 using System.Web;
 
@@ -13,15 +13,5 @@ namespace CaseStudy.Hotel.Dto
         public string Phone { get; set; }
         [Name("uri")]
         public string Url { get; set; }
-    }
-
-    public class PagedHotelResultRequestDto : PagedAndSortedResultRequestDto
-    {
-        public string FileId { get; set; }
-    }
-    public class CsvUploadResultDto
-    {
-        public string FileName { get; set; }
-        public string Name { get; set; }
     }
 }

@@ -4,11 +4,10 @@
         <h2>DASHBOARD</h2>
     </div>
     <div class="row">
-        <p-fileUpload type="file" customUpload="true" (uploadHandler)="myUploader($event)" placeholder="Upload file"
+        <p-fileUpload type="file" (onSelect)="fileOnSelect($event)" customUpload="true" (uploadHandler)="myUploader($event)" placeholder="Upload file"
             accept=".csv"></p-fileUpload>
     </div>
     <p-panel>  
-         
         <p-table [value]="hotels" [lazy]="true" (onLazyLoad)="loadHotelsLazy($event)" [rows]="10" [totalRecords]="totalRecords"
             [paginator]="true" [loading]="loading" [customSort]="true">
 
@@ -39,6 +38,7 @@
             <p-dropdown [options]="groups"  [(ngModel)]="rowGroupKey"  optionLabel="label" optionValue="value"></p-dropdown>
                     <p-button  label="Export As Json" class="ui-button-info" (onClick)="exportClick('json')" ></p-button>
                     <p-button  label="Export As Xml" class="ui-button-info" (onClick)="exportClick('xml')" ></p-button>
+                    <a ng-hide="!exportedUrl" href="{{exportedUrl}}" target="_blank">{{exportedUrl}}</a>
             </p-footer>
     </p-panel>
 </div>

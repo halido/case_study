@@ -3,7 +3,9 @@ using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Timing;
 using CaseStudy.Configuration;
+using CaseStudy.Serialization;
 using CaseStudy.Timing;
+using Castle.MicroKernel.Registration;
 
 namespace CaseStudy
 {
@@ -27,6 +29,10 @@ namespace CaseStudy
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(typeof(CaseStudyCoreModule).GetAssembly());
+            IocManager.IocContainer.Register(
+                Component.For<IObjectSerializer>().ImplementedBy<JsonSerializer>().Named(OutputFormat.json.ToString()).LifestyleSingleton());
+            IocManager.IocContainer.Register(
+                Component.For<IObjectSerializer>().ImplementedBy<XmlSerializer>().Named(OutputFormat.xml.ToString()).LifestyleSingleton());
         }
 
         public override void PostInitialize()

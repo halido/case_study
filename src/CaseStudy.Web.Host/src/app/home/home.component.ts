@@ -10,7 +10,8 @@ import { DataTable } from 'primeng/datatable'
 })
 
 export class HomeComponent extends AppComponentBase implements AfterViewInit {
-    groups: { value: string; label: string; }[];
+    groups: IRowGroup[] = [];
+    sorting: string;
 
 
     constructor(
@@ -25,16 +26,22 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
     fileId: string = "";
     hotels: HotelDto[];
     cols: any[];
-
-    rowGroupKey: any = {};
-
+    exportedUrl: string;
+    rowGroupKey: IRowGroup;
+    fileOnSelect(event: any) {
+        this.fileId = null;
+        this.exportedUrl = null;
+        this.rowGroupKey = this.groups[0];
+        this.hotels = null;
+    }
     myUploader(event: any) {
 
         for (let file of event.files) {
 
-            let fileData = new FileParameterRequestDto();
-            fileData.data = file;
-            fileData.fileName = file.name;
+            let fileData: FileParameter = {
+                data: file,
+                fileName: file.name
+            };
             this._hotelService.uploadCsv(fileData)
                 .subscribe((result: CsvUploadResultDto) => {
                     this.ViewData(result);
@@ -47,6 +54,11 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
             abp.message.error("Csv File must be Uploaded");
             return;
         }
+
+        this._hotelService.export(this.sorting, this.rowGroupKey.value, event, this.fileId).subscribe(result => {
+            this.exportedUrl = result.downloadUrl;            
+
+        });
     }
     ViewData(result: CsvUploadResultDto): void {
         this.fileId = result.fileName;
@@ -67,12 +79,12 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
         this.loading = true;
 
 
-        let sortingVal = "";
+        this.sorting = "";
         if (event.sortField) {
-            sortingVal = `${event.sortField} ${(event.sortOrder == -1) ? "desc" : "asc"}`;
+            this.sorting = `${event.sortField} ${(event.sortOrder == -1) ? "desc" : "asc"}`;
         }
 
-        this._hotelService.getAll(this.fileId, sortingVal, event.first, event.rows).subscribe(data => {
+        this._hotelService.getAll(this.fileId, this.sorting, event.first, event.rows).subscribe(data => {
 
             this.hotels = data.items;
             this.totalRecords = data.totalCount;
@@ -97,7 +109,7 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
             { field: 'url', header: 'Url' }
         ];
         this.groups = [
-            { value: null, label: 'Select a Group' },
+            { value: "", label: 'Select a Group' },
             { value: 'name', label: 'Name' },
             { value: 'contact', label: 'Contact' },
             { value: 'stars', label: 'Stars' },
@@ -108,8 +120,6 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
 
     }
 }
-class FileParameterRequestDto implements FileParameter {
-    data: any; fileName: string;
-
-
+export interface IRowGroup {
+    value: string, label: string
 }

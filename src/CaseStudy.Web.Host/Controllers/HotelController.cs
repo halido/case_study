@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
 using CaseStudy.Hotel;
 using CaseStudy.Hotel.Dto;
+using Microsoft.AspNetCore.Hosting.Internal;
 
 namespace CaseStudy.Web.Host.Controllers
 {
@@ -62,6 +63,18 @@ namespace CaseStudy.Web.Host.Controllers
             var fullPath = Path.Combine(newPath, input.FileId);
             var pagedResultDto = await _appService.GetAll(fullPath, input);
             return pagedResultDto;
+        }
+        [HttpPost]
+        public async Task<ExportResult> Export(ExportRequest input)
+        {
+            var newPath = Path.Combine(_hostingEnvironment.WebRootPath, AppConsts.UploadPath);
+            var fullPath = Path.Combine(newPath, input.FileId);
+            var exportResult = await _appService.Export(fullPath, input);
+            //Requires API gateway domain to expose static files
+            var url = $"{Request.Scheme}://{Request.Host}/{AppConsts.UploadPath}/{exportResult.FileId}";
+            
+            exportResult.DownloadUrl = url;
+            return exportResult;
         }
 
 

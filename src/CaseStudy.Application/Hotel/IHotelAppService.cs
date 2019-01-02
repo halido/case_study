@@ -9,5 +9,6 @@ namespace CaseStudy.Hotel
     public interface IHotelAppService : IDomainService
     {
         Task<PagedResultDto<HotelDto>> GetAll(string filePath, PagedHotelResultRequestDto input);
+        Task<ExportResult> Export(string filePath, ExportRequest input);
     }
 }

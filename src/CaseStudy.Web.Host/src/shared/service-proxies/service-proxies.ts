@@ -209,6 +209,69 @@ export class HotelServiceProxy {
         }
         return _observableOf<PagedResultDtoOfHotelDto>(<any>null);
     }
+
+    /**
+     * @param sorting (optional) 
+     * @param group (optional) 
+     * @param outputFormat (optional) 
+     * @param fileId (optional) 
+     * @return Success
+     */
+    export(sorting: string | null | undefined, group: string | null | undefined, outputFormat: OutputFormat | null | undefined, fileId: string | null | undefined): Observable<ExportResult> {
+        let url_ = this.baseUrl + "/api/Hotel/Export?";
+        if (sorting !== undefined)
+            url_ += "Sorting=" + encodeURIComponent("" + sorting) + "&"; 
+        if (group !== undefined)
+            url_ += "Group=" + encodeURIComponent("" + group) + "&"; 
+        if (outputFormat !== undefined)
+            url_ += "OutputFormat=" + encodeURIComponent("" + outputFormat) + "&"; 
+        if (fileId !== undefined)
+            url_ += "FileId=" + encodeURIComponent("" + fileId) + "&"; 
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processExport(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processExport(<any>response_);
+                } catch (e) {
+                    return <Observable<ExportResult>><any>_observableThrow(e);
+                }
+            } else
+                return <Observable<ExportResult>><any>_observableThrow(response_);
+        }));
+    }
+
+    protected processExport(response: HttpResponseBase): Observable<ExportResult> {
+        const status = response.status;
+        const responseBlob = 
+            response instanceof HttpResponse ? response.body : 
+            (<any>response).error instanceof Blob ? (<any>response).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }};
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = resultData200 ? ExportResult.fromJS(resultData200) : new ExportResult();
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<ExportResult>(<any>null);
+    }
 }
 
 @Injectable()
@@ -482,6 +545,53 @@ export interface IHotelDto {
     url: string | undefined;
 }
 
+export class ExportResult implements IExportResult {
+    fileId!: string | undefined;
+    downloadUrl!: string | undefined;
+
+    constructor(data?: IExportResult) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(data?: any) {
+        if (data) {
+            this.fileId = data["fileId"];
+            this.downloadUrl = data["downloadUrl"];
+        }
+    }
+
+    static fromJS(data: any): ExportResult {
+        data = typeof data === 'object' ? data : {};
+        let result = new ExportResult();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["fileId"] = this.fileId;
+        data["downloadUrl"] = this.downloadUrl;
+        return data; 
+    }
+
+    clone(): ExportResult {
+        const json = this.toJSON();
+        let result = new ExportResult();
+        result.init(json);
+        return result;
+    }
+}
+
+export interface IExportResult {
+    fileId: string | undefined;
+    downloadUrl: string | undefined;
+}
+
 export class GetCurrentLoginInformationsOutput implements IGetCurrentLoginInformationsOutput {
     application!: ApplicationInfoDto | undefined;
     user!: UserLoginInfoDto | undefined;
@@ -704,6 +814,11 @@ export interface ITenantLoginInfoDto {
     tenancyName: string | undefined;
     name: string | undefined;
     id: number | undefined;
+}
+
+export enum OutputFormat {
+    _0 = 0, 
+    _1 = 1, 
 }
 
 export interface FileParameter {

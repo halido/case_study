@@ -48,7 +48,7 @@ In your opened command prompt, run the following command:
 
 or
 
-    npm run
+    npm start
 
 > Sample Csv File **hotels.csv** is located in **root** folder
 

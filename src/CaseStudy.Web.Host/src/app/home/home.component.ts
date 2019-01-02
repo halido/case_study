@@ -57,7 +57,7 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
 
         this._hotelService.export(this.sorting, this.rowGroupKey.value, event, this.fileId).subscribe(result => {
             this.exportedUrl = result.downloadUrl;            
-
+            abp.notify.success(`hotels exported, click link next to Export Button`);
         });
     }
     ViewData(result: CsvUploadResultDto): void {

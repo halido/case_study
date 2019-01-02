@@ -50,6 +50,10 @@ or
 
     npm start
 
+Once the application has compiled, you can go to <http://localhost:4200> in
+your browser. Be sure that the Web.Host application is running at the same
+time.
+
 > Sample Csv File **hotels.csv** is located in **root** folder
 
 > Uploaded Csv Files & Exported Files are located in **src/CaseStudy.Web.Host/wwwroot/Upload**

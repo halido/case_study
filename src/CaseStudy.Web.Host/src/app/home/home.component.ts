@@ -1,14 +1,16 @@
-import { Component, Injector, AfterViewInit } from '@angular/core';
+import { Component, Injector, AfterViewInit, ViewChild } from '@angular/core';
 import { AppComponentBase } from '@shared/app-component-base';
 import { appModuleAnimation } from '@shared/animations/routerTransition';
 import { HotelServiceProxy, CsvUploadResultDto, FileParameter, HotelDto } from '@shared/service-proxies/service-proxies';
-import { SortEvent } from 'primeng/api';
+import { LazyLoadEvent } from 'primeng/api';
+import { DataTable } from 'primeng/datatable'
 @Component({
     templateUrl: './home.component.html',
     animations: [appModuleAnimation()]
 })
 
 export class HomeComponent extends AppComponentBase implements AfterViewInit {
+    groups: { value: string; label: string; }[];
 
 
     constructor(
@@ -16,11 +18,15 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
     ) {
         super(injector);
     }
-
+    @ViewChild(DataTable) dt: DataTable
+    loading: boolean;
+    totalRecords: number;
     uploadedFiles: any[] = [];
-    fileName: string = "";
+    fileId: string = "";
     hotels: HotelDto[];
     cols: any[];
+
+    rowGroupKey: any = {};
 
     myUploader(event: any) {
 
@@ -32,31 +38,55 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
             this._hotelService.uploadCsv(fileData)
                 .subscribe((result: CsvUploadResultDto) => {
                     this.ViewData(result);
-                    
+
                 });;
         }
     }
-    ViewData(result: CsvUploadResultDto): void {
-        this.fileName = result.fileName;
-        this._hotelService.getAll(this.fileName, "", 0, 100).subscribe(data =>{ 
-            this.hotels = data.items
-            abp.notify.success(`${data.totalCount} hotels retrieved`);
-        });
+    exportClick(event) {
+        if (!this.fileId) {
+            abp.message.error("Csv File must be Uploaded");
+            return;
+        }
     }
-    onSort(event: SortEvent) {
-        abp.ui.setBusy();
-        this._hotelService.getAll(this.fileName, `${event.field} ${(event.order == -1) ? "desc" : "asc"}`  , 0, 100).subscribe(data => {
-           
-          this.hotels  =  data.items;
-            abp.ui.clearBusy();
-            abp.notify.success(`${data.totalCount} hotels retrieved`);
+    ViewData(result: CsvUploadResultDto): void {
+        this.fileId = result.fileName;
+
+        let eventData: LazyLoadEvent = {
+            first: 0,
+            rows: 10,
+        };
+        this.loadHotelsLazy(eventData);
+
+
+    }
+    loadHotelsLazy(event: LazyLoadEvent) {
+
+        if (!this.fileId)
+            return;
+
+        this.loading = true;
+
+
+        let sortingVal = "";
+        if (event.sortField) {
+            sortingVal = `${event.sortField} ${(event.sortOrder == -1) ? "desc" : "asc"}`;
+        }
+
+        this._hotelService.getAll(this.fileId, sortingVal, event.first, event.rows).subscribe(data => {
+
+            this.hotels = data.items;
+            this.totalRecords = data.totalCount;
+            this.loading = false;
+
+            abp.notify.success(`${data.totalCount} hotels found, ${data.items.length} hotels retrieved`);
 
         }, (err) => {
-            abp.ui.clearBusy();
-            abp.message.error(err) ;         
+            abp.message.error(err);
+            this.loading = false;
         });
 
     }
+
     ngOnInit() {
         this.cols = [
             { field: 'name', header: 'Name' },
@@ -66,9 +96,15 @@ export class HomeComponent extends AppComponentBase implements AfterViewInit {
             { field: 'phone', header: 'Phone' },
             { field: 'url', header: 'Url' }
         ];
+        this.groups = [
+            { value: null, label: 'Select a Group' },
+            { value: 'name', label: 'Name' },
+            { value: 'contact', label: 'Contact' },
+            { value: 'stars', label: 'Stars' },
+        ];
+
     }
     ngAfterViewInit(): void {
-
 
     }
 }

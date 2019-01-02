@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Abp.Application.Services;
 using Abp.Authorization;
 using Abp.Runtime.Session;
 using CaseStudy.Configuration.Dto;
@@ -6,7 +7,7 @@ using CaseStudy.Configuration.Dto;
 namespace CaseStudy.Configuration
 {
     [AbpAuthorize]
-    public class ConfigurationAppService : CaseStudyAppServiceBase, IConfigurationAppService
+    public class ConfigurationAppService : ApplicationService, IConfigurationAppService
     {
         public async Task ChangeUiTheme(ChangeUiThemeInput input)
         {

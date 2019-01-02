@@ -3,27 +3,42 @@
     <div class="block-header">
         <h2>DASHBOARD</h2>
     </div>
-    <div class="row clearfix">
+    <div class="row">
         <p-fileUpload type="file" customUpload="true" (uploadHandler)="myUploader($event)" placeholder="Upload file"
             accept=".csv"></p-fileUpload>
-
-            <p-table [value]="hotels" [lazy]="true" (onSort)="onSort($event)"  [customSort]="true">
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th *ngFor="let col of cols"  [pSortableColumn]="col.field">
-                                {{col.header}}
-                                <p-sortIcon [field]="col.field"></p-sortIcon>
-                            </th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-hotel>
-                        <tr>
-                            <td *ngFor="let col of cols">
-                                {{hotel[col.field]}}
-                            </td>
-                        </tr>
-                    </ng-template>
-                </p-table>
     </div>
-   
+    <p-panel>  
+         
+        <p-table [value]="hotels" [lazy]="true" (onLazyLoad)="loadHotelsLazy($event)" [rows]="10" [totalRecords]="totalRecords"
+            [paginator]="true" [loading]="loading" [customSort]="true">
+
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+                        {{col.header}}
+                        <p-sortIcon [field]="col.field"></p-sortIcon>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-hotel>
+                <tr>
+                    <td *ngFor="let col of cols">
+                        {{hotel[col.field]}}
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage" let-columns>
+                <tr>
+                    <td [attr.colspan]="cols.length">
+                        Csv file required.
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+        <p-footer>
+            <p-dropdown [options]="groups"  [(ngModel)]="rowGroupKey"  optionLabel="label" optionValue="value"></p-dropdown>
+                    <p-button  label="Export As Json" class="ui-button-info" (onClick)="exportClick('json')" ></p-button>
+                    <p-button  label="Export As Xml" class="ui-button-info" (onClick)="exportClick('xml')" ></p-button>
+            </p-footer>
+    </p-panel>
 </div>

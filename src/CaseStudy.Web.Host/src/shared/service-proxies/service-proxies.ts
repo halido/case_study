@@ -155,7 +155,7 @@ export class HotelServiceProxy {
      * @return Success
      */
     getAll(fileId: string | null | undefined, sorting: string | null | undefined, skipCount: number | null | undefined, maxResultCount: number | null | undefined): Observable<PagedResultDtoOfHotelDto> {
-        let url_ = this.baseUrl + "/api/services/app/Hotel/GetAll?";
+        let url_ = this.baseUrl + "/api/Hotel/GetAll?";
         if (fileId !== undefined)
             url_ += "FileId=" + encodeURIComponent("" + fileId) + "&"; 
         if (sorting !== undefined)

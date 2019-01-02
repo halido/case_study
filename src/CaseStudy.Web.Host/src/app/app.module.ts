@@ -24,7 +24,9 @@ import { SideBarFooterComponent } from '@app/layout/sidebar-footer.component';
 import { RightSideBarComponent } from '@app/layout/right-sidebar.component';
 import { TableModule } from 'primeng/table';
 import { FileUploadModule } from 'primeng/fileupload';
-
+import { DropdownModule } from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
+import {  ButtonModule } from 'primeng/button';
 @NgModule({
     declarations: [
         AppComponent,
@@ -34,8 +36,8 @@ import { FileUploadModule } from 'primeng/fileupload';
         SideBarUserAreaComponent,
         SideBarNavComponent,
         SideBarFooterComponent,
-        RightSideBarComponent     
-    
+        RightSideBarComponent
+
     ],
     imports: [
         CommonModule,
@@ -49,8 +51,11 @@ import { FileUploadModule } from 'primeng/fileupload';
         SharedModule,
         NgxPaginationModule,
         TableModule,
-        FileUploadModule
-        
+        FileUploadModule,
+        DropdownModule,
+        PanelModule,
+        ButtonModule
+
     ],
     providers: [
 

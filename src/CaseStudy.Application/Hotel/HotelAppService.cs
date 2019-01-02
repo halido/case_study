@@ -1,92 +1,74 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.Auditing;
+using Abp.Domain.Services;
 using Abp.Domain.Uow;
+using Abp.Extensions;
+using Abp.Linq.Extensions;
 using CaseStudy.Hotel.Dto;
+using CsvHelper;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
-using Abp.Application.Services;
-using Abp.Extensions;
-using Abp.Linq.Extensions;
+using Abp.Logging;
 
 namespace CaseStudy.Hotel
 {
-    public class HotelAppService : CaseStudyAppServiceBase, IHotelAppService
+
+  
+    public class HotelAppService : CaseStudyAppServiceBase<HotelDto>, IHotelAppService
     {
+
+
         [DisableAuditing]
         [UnitOfWork(IsDisabled = true)]
-        public async Task<PagedResultDto<HotelDto>> GetAll(PagedHotelResultRequestDto input)
+        public async Task<PagedResultDto<HotelDto>> GetAll(string filePath, PagedHotelResultRequestDto input)
         {
+
+            //Simulate long running operation
+            //await Task.Delay(TimeSpan.FromSeconds(1));
+
             //Read Hotel Data From Csv Filter, Sort ,Group
-            var result = GenerateHotels(100).AsQueryable();
-            result= ApplySorting(result.AsQueryable(),input);
-            result=ApplyPaging(result.AsQueryable(),input);
+            var result = ReadCsv(filePath).AsQueryable();
+            result = ApplySorting(result, input);
+            result = ApplyPaging(result, input);
             return new PagedResultDto<HotelDto>()
             {
                 Items = result.ToList(),
                 TotalCount = 100
             };
         }
-        protected virtual IQueryable<HotelDto> ApplySorting(IQueryable<HotelDto> query, PagedHotelResultRequestDto input)
+
+        public List<HotelDto> ReadCsv(string filePath)
         {
-            //Try to sort query if available
-            var sortInput = (ISortedResultRequest) input;
-            if (sortInput != null)
+            var hotelValidator = new HotelValidator();
+            var records = new List<HotelDto>();
+            try
             {
-                if (!sortInput.Sorting.IsNullOrWhiteSpace())
+           
+                using (var reader = new StreamReader($"{filePath}"))
+                using (var csv = new CsvReader(reader))
                 {
-                    return query.OrderBy(sortInput.Sorting);
+                    csv.Configuration.PrepareHeaderForMatch = (s, i) => s.ToLower();
+                    while (csv.Read())
+                    {
+                        var record = csv.GetRecord<HotelDto>();
+                        var validationResult = hotelValidator.Validate(record);
+                        if (validationResult.IsValid)
+                            records.Add(record);
+                    }
+                    return records.ToList();
                 }
             }
-          
-            //No sorting
-            return query;
-        }
-
-        /// <summary>
-        /// Should apply paging if needed.
-        /// </summary>
-        /// <param name="query">The query.</param>
-        /// <param name="input">The input.</param>
-        protected virtual IQueryable<HotelDto> ApplyPaging(IQueryable<HotelDto> query, PagedHotelResultRequestDto input)
-        {
-            //Try to use paging if available
-            var pagedInput = (IPagedResultRequest) input;
-            if (pagedInput != null)
+            catch (Exception e)
             {
-                return query.PageBy(pagedInput);
+                return records;
             }
 
-            //Try to limit query result if available
-            var limitedInput = (ILimitedResultRequest) input;
-            if (limitedInput != null)
-            {
-                return query.Take(limitedInput.MaxResultCount);
-            }
-
-            //No paging
-            return query;
         }
-        private List<HotelDto> GenerateHotels(int i)
-        {
-            var hotelDtos = new List<HotelDto>();
-            for (int j = 0; j < 100; j++)
-            {
-                hotelDtos.Add(new HotelDto()
-                {
-                    Address = $" Address {j}",
-                    Contact = $"Contact {j}",
-                    Name = $"Name {j}",
-                    Phone = $"Phone {j}",
-                    Url = $"Url {j}",
-                    Stars = j
 
-                });
 
-            }
-
-            return hotelDtos;
-        }
     }
 }

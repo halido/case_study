@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Abp.Application.Services;
 using Abp.Auditing;
 using CaseStudy.Sessions.Dto;
 
 namespace CaseStudy.Sessions
 {
-    public class SessionAppService : CaseStudyAppServiceBase, ISessionAppService
+    public class SessionAppService : ApplicationService, ISessionAppService
     {
         [DisableAuditing]
         public async Task<GetCurrentLoginInformationsOutput> GetCurrentLoginInformations()
@@ -19,8 +20,6 @@ namespace CaseStudy.Sessions
                     Features = new Dictionary<string, bool>()
                 }
             };
-
-         
                 output.User = new UserLoginInfoDto()
                 {
                     Name = "Halit",

@@ -11,6 +11,8 @@
     <RootNamespace>CaseStudy</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="12.1.0" />
+    <PackageReference Include="FluentValidation" Version="8.1.2" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.9" />
   </ItemGroup>
   <ItemGroup>

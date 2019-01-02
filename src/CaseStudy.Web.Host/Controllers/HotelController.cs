@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
-using CaseStudy.Models;
+using System.Threading.Tasks;
+using Abp.Application.Services.Dto;
+using CaseStudy.Hotel;
+using CaseStudy.Hotel.Dto;
 
 namespace CaseStudy.Web.Host.Controllers
 {
@@ -12,10 +15,12 @@ namespace CaseStudy.Web.Host.Controllers
     public class HotelController : CaseStudyControllerBase
     {
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IHotelAppService _appService;
 
-        public HotelController(IHostingEnvironment hostingEnvironment)
+        public HotelController(IHostingEnvironment hostingEnvironment,IHotelAppService appService)
         {
             _hostingEnvironment = hostingEnvironment;
+            _appService = appService;
         }
         // GET: /<controller>/
         [HttpPost, DisableRequestSizeLimit]
@@ -23,10 +28,8 @@ namespace CaseStudy.Web.Host.Controllers
         {
             try
             {
-                string folderName = "Upload";
-                string webRootPath = _hostingEnvironment.WebRootPath;
-                string newPath = Path.Combine(webRootPath, folderName);
-                string uniqueFileName = Guid.NewGuid().ToString("N");
+                var newPath = Path.Combine(_hostingEnvironment.WebRootPath, AppConsts.UploadPath);
+                var uniqueFileName = Guid.NewGuid().ToString("N")+ Path.GetExtension(file.FileName);
                 if (!Directory.Exists(newPath))
                 {
                     Directory.CreateDirectory(newPath);
@@ -34,7 +37,7 @@ namespace CaseStudy.Web.Host.Controllers
                 if (file.Length > 0)
                 {
 
-                    string fullPath = Path.Combine(newPath, uniqueFileName+ Path.GetExtension(file.FileName));
+                    var fullPath = Path.Combine(newPath, uniqueFileName );
                     using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
                         file.CopyTo(stream);
@@ -51,6 +54,17 @@ namespace CaseStudy.Web.Host.Controllers
                 return new CsvUploadResultDto();
             }
         }
+
+        [HttpGet]
+        public async Task<PagedResultDto<HotelDto>> GetAll( PagedHotelResultRequestDto input)
+        {
+            var newPath = Path.Combine(_hostingEnvironment.WebRootPath, AppConsts.UploadPath);
+            var fullPath = Path.Combine(newPath, input.FileId);
+            var pagedResultDto = await _appService.GetAll(fullPath, input);
+            return pagedResultDto;
+        }
+
+
     }
 }
 

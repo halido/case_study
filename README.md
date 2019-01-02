@@ -10,7 +10,7 @@
 If you have problems with running the application, close and then re-open
 Visual Studio again. It sometimes fails on the first package restore.
 
-#### DotNot CLI 
+#### DotNet CLI 
 Open a command prompt, navigate to the **CaseStudy.Web.Host** folder which contains
 the **package.json** file :
 
